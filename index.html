@@ -19,6 +19,10 @@
 /* Expanded toolbox and cursor access remain usable while the city runs. */
 .inventory-wrap{width:min(950px,calc(100% - 175px))}.cursor-banner{position:absolute;left:50%;top:126px;transform:translateX(-50%);display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid #ffffffe0;border-radius:22px;background:#fbfaf4ea;color:#5c786d;font-size:10px;letter-spacing:.4px;white-space:nowrap}.cursor-banner small{font-size:9px;color:#8d9986}.cursor-banner kbd{background:#fff0bf;border-color:#e3d6a5}.hotbar .item-button{min-width:0}.hotbar .item-button .item-label{font-size:9px}@media(max-width:1050px){.inventory-wrap{width:calc(100% - 140px)}.hotbar{gap:4px}.hotbar .item-button svg{width:54px}.game-footer{font-size:8px}.movement-hints{gap:7px}.movement-hints kbd{font-size:7px}}@media(max-height:660px){.cursor-banner{top:100px;font-size:9px}}@media(max-width:780px){.inventory-wrap{width:calc(100% - 28px)}.hotbar{gap:2px}.hotbar .item-button svg{width:43px}.hotbar .item-button .item-label{font-size:8px}.cursor-banner small{display:none}.movement-hints{flex-wrap:wrap}.game-footer{gap:4px}}@media(max-width:580px){.hotbar{overflow-x:auto;scrollbar-width:thin}.hotbar .item-button{flex:0 0 54px}.inventory-heading #selected-type{display:none}.throw-hints{display:none}}
 
+/* Keep return/pause actions reachable as the settings list grows. */
+.settings-card{display:flex;flex-direction:column;overflow:hidden}.settings-card>.modal-heading,.settings-card>.pause-actions,.settings-card>.settings-bottom{flex-shrink:0}.settings-card>.settings-layout{min-height:0;flex:1 1 auto;overflow:auto;scrollbar-width:thin;scrollbar-color:#b6c6b8 transparent;padding:2px 4px}.settings-card>.settings-bottom{position:static}
+/* X-ray frames sit above the city and below the controls; they never capture input. */
+#people-xray{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}#people-xray[hidden]{display:none}.xray-legend{position:absolute;left:33px;top:161px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 13px;border:1px solid #ffffff80;border-radius:9px;background:#193541ed;color:#f6faf5;font-size:10px;box-shadow:0 3px 14px #142c3a22}.xray-legend kbd{color:#193541;background:#e9f3e9;border-color:#c3d3ce}.xray-legend span{display:flex;align-items:center;gap:5px}.xray-legend i{width:9px;height:11px;border:2px solid currentColor;display:inline-block}.xray-legend .healthy{color:#4dff91}.xray-legend .injured{color:#ffd84a}.xray-legend .dead{color:#ff5668}.xray-legend small{color:#b3c8c8;font-size:9px}.debris-target{margin-top:12px}.debris-target>small{display:block;text-align:center;font-size:9px;color:#84917f;margin-top:5px}@media(max-width:780px){.xray-legend{left:21px;top:167px;max-width:calc(100% - 105px);font-size:9px;gap:6px 9px}.xray-legend small{display:none}}
 /* Native cursors stay responsive independently of the 3D render loop. */
 :root{--city-cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cpath%20d%3D%22M7%206%2045%2029%2029%2032%2038%2047%2030%2051%2022%2035%2012%2045Z%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%229%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M7%206%2045%2029%2029%2032%2038%2047%2030%2051%2022%2035%2012%2045Z%22%20fill%3D%22%23ffe33d%22%20stroke%3D%22%23102c37%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22m13%2016%2022%2013-11%202%22%20fill%3D%22none%22%20stroke%3D%22%23fff8bd%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") 7 6,default;--city-click-cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cpath%20d%3D%22M7%206%2045%2029%2029%2032%2038%2047%2030%2051%2022%2035%2012%2045Z%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%229%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M7%206%2045%2029%2029%2032%2038%2047%2030%2051%2022%2035%2012%2045Z%22%20fill%3D%22%23ff8b25%22%20stroke%3D%22%23102c37%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22m13%2016%2022%2013-11%202%22%20fill%3D%22none%22%20stroke%3D%22%23fff0a0%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") 7 6,pointer;--city-text-cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2256%22%20viewBox%3D%220%200%2040%2056%22%3E%3Cpath%20d%3D%22M12%207h16M20%207v42M12%2049h16%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%2211%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%207h16M20%207v42M12%2049h16%22%20fill%3D%22none%22%20stroke%3D%22%23102c37%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%207h16M20%207v42M12%2049h16%22%20fill%3D%22none%22%20stroke%3D%22%23ffe33d%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") 20 28,text}
 html,body,#game,#ui{cursor:var(--city-cursor)}button,button *,select,input[type=range],input[type=checkbox],.toggle-field,.toggle-field *{cursor:var(--city-click-cursor)}input[type=text],input[type=number],textarea{cursor:var(--city-text-cursor)}body.pointer-locked,body.pointer-locked *{cursor:none!important}
@@ -30,6 +34,9 @@ html,body,#game,#ui{cursor:var(--city-cursor)}button,button *,select,input[type=
 
 /* The gravity core has a persistent countdown without obscuring the impact area. */
 .gravity-banner{position:absolute;left:30px;top:155px;display:flex;align-items:center;gap:11px;padding:12px 15px;background:#f8f4ffee;border:1px solid #d8caee;border-radius:12px;color:#5a477c;box-shadow:0 5px 25px #36204c14;pointer-events:none}.gravity-banner>div{display:flex;flex-direction:column;gap:5px}.gravity-banner b{font-size:12px;letter-spacing:.5px}.gravity-banner b small{font-size:9px;font-weight:500}#gravity-seconds{margin-left:10px;font-variant-numeric:tabular-nums;font-size:16px;color:#8054bc}#gravity-affected{font-size:9px;color:#8c7c9d}.gravity-track{height:3px;background:#e3d8f1;border-radius:4px;overflow:hidden;margin-top:1px}.gravity-track>i{display:block;width:100%;height:100%;background:linear-gradient(90deg,#66bfb6,#a272df);transform-origin:left}.gravity-orb{display:block;position:relative;width:27px;height:27px;border-radius:50%;background:radial-gradient(circle at 33% 26%,#4c3a68,#171322 65%);box-shadow:0 0 0 3px #b897dd30,0 0 17px #b094d950}.gravity-orb:after{content:"";position:absolute;left:-7px;top:7px;width:41px;height:10px;border:2px solid #a080c7;border-radius:50%;transform:rotate(-22deg)}.hotbar .gravity-item.selected{background:#eadffa;border-color:#b899df;color:#68428f}.hotbar .gravity-item.selected:after{background:#9462c4}@media(max-height:790px){.gravity-banner{top:147px;left:25px}}@media(max-height:660px){.gravity-banner{top:129px;padding:8px 11px}.gravity-banner b{font-size:10px}#gravity-affected{font-size:8px}}@media(max-width:780px){.gravity-banner{left:20px;padding:9px 11px;max-width:calc(100vw - 100px)}.gravity-orb{width:22px;height:22px}.gravity-orb:after{width:35px;height:8px;left:-7px;top:6px}.gravity-banner b{font-size:10px}#gravity-affected{font-size:8px}}
+
+/* Health and optional cleanup feedback. */
+.citizen-chip{flex-wrap:wrap;max-width:calc(100% - 170px);row-gap:6px}#citizen-dead{color:#9e5049}#citizen-injured{color:#ad7d37}.cleanup-status{position:absolute;right:32px;bottom:45px;max-width:270px;padding:5px 9px;background:#fbfaf4df;border:1px solid #ffffffb8;border-radius:6px;color:#58776a;font-size:9px;pointer-events:none}.cleanup-status.working{color:#926a27;background:#fff0cbe8}@media(max-width:1050px){.cleanup-status{right:20px;bottom:41px;font-size:8px}}@media(max-width:780px){.cleanup-status{right:16px;bottom:145px;max-width:210px}.citizen-chip{max-width:calc(100% - 85px);gap:5px 10px}}
 </style></head>
 <body><div id="loading">正在拼裝你的積木城市…</div><div id="ui">
   <section id="main-menu" class="menu-screen" aria-label="主選單">
@@ -66,10 +73,12 @@ html,body,#game,#ui{cursor:var(--city-cursor)}button,button *,select,input[type=
       <button class="pause-button icon-button" id="hud-pause" title="暫停與設定 (Esc)" aria-label="暫停與設定">Ⅱ</button>
     </header>
     <div class="district-chip"><span class="tiny-dot"></span><span id="district-label">混合街區</span><span class="chip-divider"></span><span id="seed-label">DENSE-CITY-2026</span></div>
-    <div id="citizen-status" class="citizen-chip" aria-label="行人狀態"><span>行人 <b id="citizen-total">250</b></span><span>驚慌 <b id="citizen-panic">0</b></span><span>倒地 <b id="citizen-down">0</b></span><span>建材砸倒 <b id="citizen-crushed">0</b></span></div>
+    <div id="citizen-status" class="citizen-chip" aria-label="行人狀態"><span>行人 <b id="citizen-total">250</b></span><span>存活 <b id="citizen-alive">250</b></span><span>受傷 <b id="citizen-injured">0</b></span><span>死亡 <b id="citizen-dead">0</b></span><span>驚慌 <b id="citizen-panic">0</b></span><span>倒地 <b id="citizen-down">0</b></span><span>建材砸倒 <b id="citizen-crushed">0</b></span></div>
+    <div id="xray-legend" class="xray-legend hidden"><kbd>Tab</kbd><b>行人透視</b><span class="healthy"><i></i>健康</span><span class="injured"><i></i>受傷</span><span class="dead"><i></i>死亡</span><small>再按關閉</small></div>
     <div id="gravity-banner" class="gravity-banner hidden"><span class="gravity-orb" aria-hidden="true"></span><div><b>地爆天星 <span id="gravity-seconds">5.0</span><small> 秒</small></b><span id="gravity-affected">正在牽引建材與路人・結束後自由墜落</span><i class="gravity-track"><i id="gravity-progress"></i></i></div></div>
     <div class="tool-rail" aria-label="城市工具">
-      <button id="hud-hand" title="搬運之手 (H)：瞄準抓取路人，可安全放到屋頂、積木或地面" aria-pressed="false"><span class="rail-icon">✋</span><span>搬運之手</span></button>
+      <button id="hud-hand" title="搬運之手 (H)：瞄準抓取健康或受傷路人，可安全放到屋頂、積木或地面" aria-pressed="false"><span class="rail-icon">✋</span><span>搬運之手</span></button>
+      <button id="hud-xray" title="行人透視 (Tab)：健康綠框、受傷黃框、死亡紅框" aria-pressed="false"><span class="rail-icon">▣</span><span>行人透視</span></button>
       <button id="hud-observe" title="自由觀察"><span class="rail-icon">◎</span><span>自由觀察</span></button>
       <button id="hud-rebuild" title="重建目前種子 (R)"><span class="rail-icon">↻</span><span>重建街區</span></button>
       <button id="hud-randomize" title="產生新的隨機街區"><span class="rail-icon">⚄</span><span>重新生成</span></button>
@@ -85,12 +94,13 @@ html,body,#game,#ui{cursor:var(--city-cursor)}button,button *,select,input[type=
     <div id="observer-banner" class="observer-banner hidden"><span class="tiny-dot"></span> 自由觀察中 <small>按右側「返回投擲」繼續</small></div>
     <div id="cursor-banner" class="cursor-banner hidden"><kbd>Alt</kbd><span>游標已顯示，可點選工具</span><small>再按 Alt 返回瞄準</small></div><div id="lock-hint" class="lock-hint hidden">按 Alt，返回瞄準 <span>ESC 暫停遊戲</span></div>
     <div class="inventory-wrap"><div class="inventory-heading"><div><span class="inventory-tag">目前工具</span><strong id="selected-name">小石頭</strong><span id="selected-type">精準穿透</span></div><div class="item-spec"><span id="selected-size">0.7 m</span><i></i><span id="selected-mass">2 kg</span></div></div><div id="weapon-help" class="weapon-help">按住左鍵蓄力，放開投擲；右鍵放大瞄準。</div><div id="hotbar" class="hotbar" role="group" aria-label="破壞工具"></div></div>
-    <footer class="game-footer"><div class="movement-hints"><span><kbd>WASD</kbd> 移動</span><span><kbd data-key-hint="fall">Q</kbd> 下降</span><span><kbd data-key-hint="rise">E</kbd> 上升</span><span><kbd>Shift</kbd> 加速</span><span><kbd data-key-hint="prev">Z</kbd><kbd data-key-hint="next">X</kbd> 切換</span><span><kbd>Alt</kbd> 顯示／隱藏游標</span></div><div class="throw-hints"><span><b>左鍵</b> <span id="left-action-hint">長按蓄力</span></span><span><b>右鍵</b> 放大瞄準</span></div><div class="perf"><i></i><span id="fps-value">60</span> FPS<span id="body-value">0 活動物件</span></div></footer>
+    <div id="cleanup-status" class="cleanup-status" aria-live="polite">低於 45 FPS 自動整理殘骸</div>
+    <footer class="game-footer"><div class="movement-hints"><span><kbd>WASD</kbd> 移動</span><span><kbd data-key-hint="fall">Q</kbd> 下降</span><span><kbd data-key-hint="rise">E</kbd> 上升</span><span><kbd>Shift</kbd> 加速</span><span><kbd data-key-hint="prev">Z</kbd><kbd data-key-hint="next">X</kbd> 切換</span><span><kbd>Alt</kbd> 顯示／隱藏游標</span><span><kbd>Tab</kbd> 行人透視</span></div><div class="throw-hints"><span><b>左鍵</b> <span id="left-action-hint">長按蓄力</span></span><span><b>右鍵</b> 放大瞄準</span></div><div class="perf"><i></i><span id="fps-value">60</span> FPS<span id="body-value">0 活動物件</span></div></footer>
   </section>
 
   <div id="settings-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
     <div class="settings-card"><div class="modal-heading"><div><span class="eyebrow">TAKE A BREATH</span><h2 id="settings-title">遊樂場設定</h2></div><button id="settings-close" class="close-button" aria-label="關閉設定">×</button></div>
-      <div class="settings-layout"><div class="settings-column"><h3>畫面與聲音</h3><label class="field"><span>畫質 <small>影響陰影、細節與碎屑</small></span><select data-opt="quality"><option value="low">低・優先流暢</option><option value="medium">中・均衡</option><option value="high">高・完整細節</option></select></label><label class="toggle-field"><input data-opt="adaptiveQuality" type="checkbox" checked><span>自動穩定幀率<small>忙碌時暫時調整解析度，回穩後恢復</small></span></label><label class="range-field"><span>音效音量 <b data-readout="volume">65%</b></span><input data-opt="volume" type="range" min="0" max="100" value="65"></label><label class="range-field"><span>鏡頭震動 <b data-readout="shake">45%</b></span><input data-opt="shake" type="range" min="0" max="100" value="45"></label><div class="settings-note"><span>●</span><p>左鍵蓄力投擲；機關槍按住連射。<br>空襲：按住定位，放開呼叫。<br>右鍵放大瞄準。<br>Alt 顯示／隱藏游標；Esc 暫停。<br>Q 下降、E 上升。<br>H 搬運之手：瞄準抓取／安全放下。<br>1–9／0／− 選物品。<br>= 機關槍、[ 空襲、] RPG。<br>B 地爆天星：吸引 5 秒後墜落；<span data-key-hint="prev">Z</span>／<span data-key-hint="next">X</span> 循環切換。</p></div><button class="link-button" id="reset-keys">↻ 恢復預設鍵位</button></div><div class="settings-column"><h3>鍵位設定 <small>點擊按鍵即可重新綁定</small></h3><div id="key-bindings" class="key-bindings"></div></div></div>
+      <div class="settings-layout"><div class="settings-column"><h3>畫面與聲音</h3><label class="field"><span>畫質 <small>影響陰影、細節與碎屑</small></span><select data-opt="quality"><option value="low">低・優先流暢</option><option value="medium">中・均衡</option><option value="high">高・完整細節</option></select></label><label class="toggle-field"><input data-opt="adaptiveQuality" type="checkbox" checked><span>自動穩定幀率<small>忙碌時暫時調整解析度，回穩後恢復</small></span></label><label class="toggle-field"><input data-opt="autoClearDebris" type="checkbox" checked><span>低幀率清理地面殘骸<small>持續低於設定幀率時逐塊清理已落穩殘骸；保留完整建物與空中碎塊</small></span></label><label class="range-field debris-target"><span>清理啟動門檻 <b data-readout="debrisTargetFps">45 FPS</b></span><input data-opt="debrisTargetFps" type="range" min="30" max="60" step="1" value="45"><small>30 FPS ── 45 FPS（預設）── 60 FPS</small></label><label class="range-field"><span>音效音量 <b data-readout="volume">65%</b></span><input data-opt="volume" type="range" min="0" max="100" value="65"></label><label class="range-field"><span>鏡頭震動 <b data-readout="shake">45%</b></span><input data-opt="shake" type="range" min="0" max="100" value="45"></label><div class="settings-note"><span>●</span><p>左鍵蓄力投擲；機關槍按住連射。<br>空襲：按住定位，放開呼叫。<br>右鍵放大瞄準。<br>Alt 顯示／隱藏游標；Esc 暫停。<br>Q 下降、E 上升。<br>H 搬運之手：可抓健康及受傷路人。<br>Tab 行人透視：綠健康、黃受傷、紅死亡。<br>1–9／0／− 選物品。<br>= 機關槍、[ 空襲、] RPG。<br>B 地爆天星：吸引 5 秒後墜落；<span data-key-hint="prev">Z</span>／<span data-key-hint="next">X</span> 循環切換。</p></div><button class="link-button" id="reset-keys">↻ 恢復預設鍵位</button></div><div class="settings-column"><h3>鍵位設定 <small>點擊按鍵即可重新綁定</small></h3><div id="key-bindings" class="key-bindings"></div></div></div>
       <div id="pause-actions" class="pause-actions hidden"><button id="pause-observe"><span>◎</span> 自由觀察</button><button id="pause-rebuild"><span>↻</span> 重建街區</button><button id="pause-randomize" title="使用新的隨機種子生成街區"><span>⚄</span> 重新生成</button><button id="pause-clear" title="清除掉落物，保留建築損傷"><span>⌫</span> 清除殘骸</button><button id="pause-menu"><span>⌂</span> 主選單</button></div>
       <div class="settings-bottom"><span id="settings-status">設定會自動儲存於此瀏覽器</span><button id="settings-resume" class="primary-button compact"><span>儲存並返回</span><span>↗</span></button></div>
     </div>
@@ -162,17 +172,17 @@ window.Toy = (() => {
     {name:'小石頭',mass:2,half:[.34,.29,.32],speed:96,shape:'sphere',damage:1.1,size:'0.7 m',color:0x7d8793},
     {name:'磚塊',mass:8,half:[.75,.34,.4],speed:82,shape:'box',damage:1.2,size:'1.5 m',color:0xda7053},
     {name:'保齡球',mass:22,half:[.95,.95,.95],speed:72,shape:'sphere',damage:1.25,size:'1.9 m',color:0x6651ae},
-    {name:'鐵球',mass:110,half:[1.28,1.28,1.28],speed:68,shape:'sphere',damage:1.7,size:'2.6 m',color:0x707f8e},
-    {name:'油桶',mass:70,half:[1,1.45,1],speed:65,shape:'cylinder',damage:1.1,size:'2.9 m',color:0xe97d3f,fuse:2.3},
-    {name:'鋼琴',mass:420,half:[2.65,1.6,1.6],speed:57,shape:'piano',damage:1.8,size:'5.3 m',color:0x233541},
-    {name:'小汽車',mass:900,half:[2.8,1.15,1.35],speed:53,shape:'car',damage:2.1,size:'5.6 m',color:0xf0b943},
-    {name:'巨型混凝土方塊',mass:4200,half:[3.7,3.7,3.7],speed:43,shape:'box',damage:3.4,size:'7.4 m',color:0xb5beb8},
+    {name:'鐵球',mass:600,half:[1.28,1.28,1.28],speed:32,shape:'sphere',damage:1.7,size:'2.6 m',color:0x707f8e},
+    {name:'油桶',mass:180,half:[1,1.45,1],speed:40,shape:'cylinder',damage:1.1,size:'2.9 m',color:0xe97d3f,fuse:2.3},
+    {name:'鋼琴',mass:480,half:[2.65,1.6,1.6],speed:36,shape:'piano',damage:1.8,size:'5.3 m',color:0x233541},
+    {name:'小汽車',mass:1500,half:[2.8,1.15,1.35],speed:32,shape:'car',damage:2.1,size:'5.6 m',color:0xf0b943},
+    {name:'巨型混凝土方塊',mass:6500,half:[3.7,3.7,3.7],speed:26,shape:'box',damage:3.4,size:'7.4 m',color:0xb5beb8},
     {name:'召喚隕石',mass:12000,half:[6,6,6],speed:90,shape:'meteor',damage:4.5,size:'12 m',color:0x684735,summon:true,blastRadius:17,blastEnergy:1500000},
     {name:'召喚核彈',mass:2200,half:[1.25,3,1.25],speed:74,shape:'nuke',damage:3.8,size:'6 m',color:0xe8cf67,summon:true,blastRadius:38,blastEnergy:4200000},
     {name:'手榴彈',mass:1,half:[.25,.34,.25],speed:62,shape:'grenade',damage:1,size:'0.7 m',color:0x62724b,fuse:2.6,blastRadius:7,blastEnergy:48000},
     {name:'機關槍',mass:.06,half:[.045,.045,.14],speed:240,shape:'machinegun',automatic:true,damage:1.2,size:'0.28 m 彈丸',color:0xffd16a},
     {name:'空襲',mass:180,half:[.65,1.5,.65],speed:90,shape:'airstrike',summon:true,strike:true,damage:2,size:'3 m 炸彈',color:0x69827b,blastRadius:10,blastEnergy:140000},
-    {name:'RPG 火箭發射器',mass:4,half:[.22,.22,.8],speed:110,shape:'rpg',damage:1.8,size:'1.6 m 火箭',color:0x82936a,blastRadius:10.5,blastEnergy:150000},
+    {name:'RPG 火箭發射器',mass:4,half:[.22,.22,.8],speed:110,shape:'rpg',damage:1.8,size:'1.6 m 火箭',color:0x82936a,blastRadius:5.5,blastEnergy:75000},
     {name:'地爆天星',mass:1,half:[2.25,2.25,2.25],speed:0,shape:'singularity',summon:true,gravityWell:true,duration:5,radius:42,damage:1,size:'42 m 引力場',color:0x8b63dd,codeKey:'KeyB'}
   ];
   function item(index){const d=items[index],g=new THREE.Group(),h=d.half;
@@ -268,7 +278,7 @@ window.Toy = (() => {
   // Each destructible piece is a material unit. Cache its kilogram mass so
   // support, rigid bodies and later fracture all use exactly the same value.
   // Gravity acceleration is independent of this mass; momentum is not.
-  function blockMass(k){const density={wall:1900,column:2500,slab:2400,beam:2500,roof:2100,window:2500,detail:1800}[k.kind]||2200;return Math.round(Math.max(1000,Math.min(2500,Number.isFinite(k.mass)?k.mass:k.sx*k.sy*k.sz*density)))}
+  function blockMass(k){const density={wall:1900,column:2500,slab:2400,beam:2500,roof:2100,window:2500,detail:1800}[k.kind]||2200;return Math.round(Math.max(1000,Math.min(2000,Number.isFinite(k.mass)?k.mass:k.sx*k.sy*k.sz*density)))}
   return {geo,material,part,item,items,weaponView,aircraft,hand,blockDurability,blockMass,GRAVITY:9.81};
 })();
 
@@ -1097,9 +1107,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   const offset=new T.Vector3(),min=new T.Vector3(),max=new T.Vector3(),normal=new T.Vector3(),closest=new T.Vector3(),basis=new T.Matrix4();
   const hingeAxis=new T.Vector3(),hingeBend=new T.Vector3(),hingeTarget=new T.Vector3();
   const centerBefore=new T.Vector3(),centerAfter=new T.Vector3();
+  const supportVelocity=new T.Vector3(),supportArm=new T.Vector3();
   const localPoint=new T.Vector3(),localOld=new T.Vector3(),sweepNormal=new T.Vector3(),bodyTravel=new T.Vector3(),origin=new T.Vector3(),debrisBefore=new T.Vector3();
   const MASS_SUM=MASSES.reduce((a,b)=>a+b,0),balance=new T.Vector3(),armDirection=new T.Vector3();
-  const shapeBounds=new WeakMap(),bodyBounds=new WeakMap(),staticBounds=new WeakMap(),shapeRotation=new T.Quaternion(),proxyHalf=new T.Vector3(),oldProxyHalf=new T.Vector3();
+  const shapeBounds=new WeakMap(),bodyBounds=new WeakMap(),materialBounds=new WeakMap(),staticBounds=new WeakMap(),shapeRotation=new T.Quaternion(),proxyHalf=new T.Vector3(),oldProxyHalf=new T.Vector3();
   const AXES=['x','y','z'],LEG_CHAINS=[[13,14,15,16,1],[17,18,19,20,-1]];
   const EXCLUDED_PAIRS=[[8,0],[8,1],[8,2],[12,0],[12,1],[12,2],[14,18],[15,19],[16,20],[21,0]],TOPPLE_NODES=[1,2,3,4,21];
   let activeCount=0,frame=0;
@@ -1118,7 +1129,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const r=p.ragdoll={joints,nodes,old:nodes.map(v=>v.clone()),velocities:nodes.map(()=>new T.Vector3()),
       radii:RADII.map(x=>x*p.scale).concat(headRadius),masses:MASSES.map(m=>m*p.mass/MASS_SUM),inverseMass:MASSES.map(m=>1/m),constraints:[],hinges:[],rest:rest.map(j=>j.slice()),
       parents:parents.slice(),sleeping:false,restTime:0,age:0,accumulator:0,supports:[],contacts:[],reach:1.5*p.scale,
-      collisionSamples:[],contactPool:nodes.map((_,index)=>({index,block:null,body:null})),blockCandidates:[],debrisCandidates:[],underDebris:new WeakMap(),maxConstraintError:0,groundContacts:0,limits:p.collider&&p.collider.ragdollLimits||{},armCones:[]};
+      collisionSamples:[],contactPool:nodes.map((_,index)=>({index,block:null,body:null,incomingSpeed:0})),incomingMotion:new T.Vector3(),blockCandidates:[],debrisCandidates:[],underDebris:new WeakMap(),maxConstraintError:0,groundContacts:0,limits:p.collider&&p.collider.ragdollLimits||{},armCones:[]};
     axes(r);
     for(const [a,b,key] of [[6,7,'shoulderCone'],[10,11,'shoulderCone'],[7,8,'forearmCone'],[11,12,'forearmCone']]) {
       const angle=r.limits[key];if(!Number.isFinite(angle))continue;
@@ -1165,6 +1176,17 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     r.sleeping=false;r.restTime=0;p.state='fall';p.supportBlock=null;
     for(const v of r.velocities)v.addScaledVector(acceleration,dt);
     p.velocity.addScaledVector(acceleration,dt);
+    return true;
+  }
+  function relocate(p,position,held=false) {
+    const r=p.ragdoll;if(!r||!position||![position.x,position.y,position.z].every(Number.isFinite))return false;
+    // Rendered joints and collision samples reference nodes. Translate each node
+    // once, together with its Verlet history, so carrying cannot stretch a limb.
+    delta.copy(position).sub(p.position);
+    for(let i=0;i<r.nodes.length;i++){r.nodes[i].add(delta);r.old[i].add(delta);r.velocities[i].set(0,0,0)}
+    p.position.copy(position);p.velocity.set(0,0,0);p.angular.set(0,0,0);
+    r.sleeping=held;r.restTime=0;r.accumulator=0;r.supports.length=0;r.contacts.length=0;r.groundContacts=0;
+    r.underDebris=new WeakMap();r.bloodPoint=null;p.supportBlock=null;
     return true;
   }
   function energy(r) {let value=0;const g=gravity();for(let i=0;i<r.nodes.length;i++)value+=r.masses[i]*(g*r.nodes[i].y+.5*r.velocities[i].lengthSq());return value;}
@@ -1236,6 +1258,27 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const t=length?Math.max(0,Math.min(1,offset.copy(point).sub(a).dot(bodyTravel)/length)):0;
     return closest.copy(a).addScaledVector(bodyTravel,t).distanceToSquared(point)<=reach*reach;
   }
+  function materialProxy(body,part) {
+    let proxy=materialBounds.get(part);
+    if(!proxy){
+      const half=part.half;
+      proxy={body,block:part.block,half,reach:half.length(),center:new T.Vector3(),q:new T.Quaternion(),inverse:new T.Quaternion(),oldCenter:new T.Vector3(),oldQ:new T.Quaternion(),oldInverse:new T.Quaternion(),
+        position:new T.Vector3(Infinity,Infinity,Infinity),bodyQ:new T.Quaternion(),oldPosition:new T.Vector3(Infinity,Infinity,Infinity),oldBodyQ:new T.Quaternion(),sweepMin:new T.Vector3(),sweepMax:new T.Vector3(),box:{x:0,y:0,z:0,sx:half.x*2,sy:half.y*2,sz:half.z*2}};
+      materialBounds.set(part,proxy);
+    }
+    const oldPosition=body.oldPosition||body.position,oldQ=body.oldQuaternion||body.quaternion;
+    if(!proxy.position.equals(body.position)||!proxy.bodyQ.equals(body.quaternion)||!proxy.oldPosition.equals(oldPosition)||!proxy.oldBodyQ.equals(oldQ)){
+      proxy.position.copy(body.position);proxy.bodyQ.copy(body.quaternion);proxy.oldPosition.copy(oldPosition);proxy.oldBodyQ.copy(oldQ);
+      proxy.center.copy(part.local).applyQuaternion(body.quaternion).add(body.position);proxy.oldCenter.copy(part.local).applyQuaternion(oldQ).add(oldPosition);
+      proxy.q.copy(body.quaternion).multiply(part.rotation);proxy.oldQ.copy(oldQ).multiply(part.rotation);proxy.inverse.copy(proxy.q).invert();proxy.oldInverse.copy(proxy.oldQ).invert();
+      proxy.moving=proxy.oldCenter.distanceToSquared(proxy.center)>.000001||Math.abs(proxy.q.dot(proxy.oldQ))<.999999;
+      orientedHalf(proxy.half,proxy.q,proxyHalf);orientedHalf(proxy.half,proxy.oldQ,oldProxyHalf);
+      const arc=(proxy.reach+part.local.length())*2*Math.sin(body.quaternion.angleTo(oldQ)*.25)+1e-5;
+      proxy.sweepMin.set(Math.min(proxy.center.x-proxyHalf.x,proxy.oldCenter.x-oldProxyHalf.x)-arc,Math.min(proxy.center.y-proxyHalf.y,proxy.oldCenter.y-oldProxyHalf.y)-arc,Math.min(proxy.center.z-proxyHalf.z,proxy.oldCenter.z-oldProxyHalf.z)-arc);
+      proxy.sweepMax.set(Math.max(proxy.center.x+proxyHalf.x,proxy.oldCenter.x+oldProxyHalf.x)+arc,Math.max(proxy.center.y+proxyHalf.y,proxy.oldCenter.y+oldProxyHalf.y)+arc,Math.max(proxy.center.z+proxyHalf.z,proxy.oldCenter.z+oldProxyHalf.z)+arc);
+    }
+    return proxy;
+  }
   function debrisCandidates(r,G) {
     const result=r.debrisCandidates;result.length=0;bounds(r);
     // Preserve fast joint travel as well as fast rubble travel. The existing
@@ -1246,6 +1289,13 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       // Reject distant bodies before walking their compound shapes. Fast falling
       // slabs are still candidates along their entire actual movement this step.
       if(!nearSweep(r.nodes[0],body.oldPosition||body.position,body.position,body.half.length()+2.5))continue;
+      // A physics budget proxy can span empty rooms. Dolls share People's
+      // local material grid and cache poses only for actual nearby bricks.
+      const parts=window.People?._queryMaterialParts?.(body,min,max);
+      if(parts){
+        for(const part of parts){const proxy=materialProxy(body,part);if(overlapSweep(proxy.sweepMin,proxy.sweepMax)&&nearSweep(r.nodes[0],proxy.oldCenter,proxy.center,proxy.reach+2.5))result.push(proxy);}
+        continue;
+      }
       const cache=bodyProxies(body);
       if(!overlapSweep(cache.sweepMin,cache.sweepMax))continue;
       for(const proxy of cache.proxies)if(overlapSweep(proxy.sweepMin,proxy.sweepMax)&&nearSweep(r.nodes[0],proxy.oldCenter,proxy.center,proxy.reach+2.5))result.push(proxy);
@@ -1348,8 +1398,12 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if(!inside&&axis&&enter>=0&&enter<=1){n.lerpVectors(old,n,Math.max(0,enter-.0001));n[axis]+=sign*.0002;if(hitNormal){hitNormal.set(0,0,0);hitNormal[axis]=sign}return true}
     return inside;
   }
-  function contact(r,index,block,body) {
+  function contact(r,index,block,body,contactNormal) {
     const c=r.contactPool[index];c.block=block||null;c.body=body||null;r.contacts[index]=c;
+    supportVelocity.set(0,0,0);
+    if(body){supportVelocity.copy(body.velocity);const w=body.rb?.angularVelocity;if(w){supportArm.copy(r.nodes[index]).sub(body.position);supportVelocity.x+=w.y*supportArm.z-w.z*supportArm.y;supportVelocity.y+=w.z*supportArm.x-w.x*supportArm.z;supportVelocity.z+=w.x*supportArm.y-w.y*supportArm.x;}}
+    supportVelocity.sub(r.incomingMotion);
+    c.incomingSpeed=Math.max(0,contactNormal?supportVelocity.dot(contactNormal):supportVelocity.y);
   }
   function collide(r,index,G,blocks,sweep) {
     const worldNode=r.nodes[index],radius=r.radii[index],floor=ground(G,worldNode.x,worldNode.z)+radius;
@@ -1366,13 +1420,13 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       const lx=n.x-box.x,ly=n.y-box.y,lz=n.z-box.z;
       closest.set(Math.max(-hx,Math.min(hx,lx)),Math.max(-hy,Math.min(hy,ly)),Math.max(-hz,Math.min(hz,lz)));
       normal.set(lx-closest.x,ly-closest.y,lz-closest.z);const distance=normal.length();
-      if(distance>=radius){if(proxy){worldNode.copy(n).applyQuaternion(proxy.q).add(proxy.center);normal.applyQuaternion(proxy.q)}if(distance<radius+.001&&normal.y/distance>.55)contact(r,index,b,null);continue}
+      if(distance>=radius){if(proxy){worldNode.copy(n).applyQuaternion(proxy.q).add(proxy.center);normal.applyQuaternion(proxy.q)}if(distance<radius+.001&&normal.y/distance>.55)contact(r,index,b,null,normal.normalize());continue}
       let penetration;
       if(distance>.00001){normal.divideScalar(distance);penetration=radius-distance}
       else {const dx=hx-Math.abs(lx),dy=hy-Math.abs(ly),dz=hz-Math.abs(lz);normal.set(0,0,0);if(dy<=dx&&dy<=dz){normal.y=ly<0?-1:1;penetration=dy+radius}else if(dx<dz){normal.x=lx<0?-1:1;penetration=dx+radius}else{normal.z=lz<0?-1:1;penetration=dz+radius}}
       n.addScaledVector(normal,penetration+.0002);
       if(proxy){worldNode.copy(n).applyQuaternion(proxy.q).add(proxy.center);normal.applyQuaternion(proxy.q)}
-      if(normal.y>.55)contact(r,index,b,null);
+      if(normal.y>.55)contact(r,index,b,null,normal);
     }
   }
   function movingDebrisTouches(r,proxies) {
@@ -1419,7 +1473,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
           }
         }
         closest.copy(localPoint).clamp(offset.copy(proxy.half).negate(),proxy.half);normal.copy(localPoint).sub(closest);
-        const distance=normal.length();if(distance>=radius){if(distance<radius+.001){normal.divideScalar(distance).applyQuaternion(proxy.q);if(normal.y>.55)r.contacts[index]={index,body:proxy.body}}continue}
+        const distance=normal.length();if(distance>=radius){if(distance<radius+.001){normal.divideScalar(distance).applyQuaternion(proxy.q);if(normal.y>.55)contact(r,index,proxy.block,proxy.body,normal)}continue}
         let penetration;
         if(distance>.00001){normal.divideScalar(distance);penetration=radius-distance}
         else {let best=Infinity,axis='x';for(const key of AXES){const d=proxy.half[key]-Math.abs(localPoint[key]);if(d<best){best=d;axis=key}}normal.set(0,0,0);normal[axis]=localPoint[axis]<0?-1:1;penetration=best+radius}
@@ -1429,7 +1483,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
         normal.copy(n).sub(proxy.center);if(distance>.00001)normal.divideScalar(distance);else normal.set(0,1,0);
         n.addScaledVector(normal,target-distance+.0002);
       }
-      if(normal.y>.55)contact(r,index,null,proxy.body);
+      if(normal.y>.55)contact(r,index,proxy.block,proxy.body,normal);
     }
     // The heavier one-way debris solver can close the gap to the road. Keep
     // dolls covered at road level rather than projecting through the ground.
@@ -1456,6 +1510,12 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const steps=Math.max(1,Math.ceil(elapsed*120)),h=elapsed/steps;
     for(let sub=0;sub<steps;sub++) {
       const energyBefore=energy(r);
+      // Preserve incoming center-of-mass speed before floor projection removes
+      // it. A living knocked-down body can still be hurt by its next real fall.
+      r.incomingMotion.set(0,0,0);
+      for(let i=0;i<r.velocities.length;i++)r.incomingMotion.addScaledVector(r.velocities[i],MASSES[i]/MASS_SUM);
+      r.incomingMotion.y-=gravity()*h;
+      const wasSupported=r.groundContacts>0;
       const blocks=staticCandidates(r,G),debris=debrisCandidates(r,G);r.contacts.length=0;
       for(let i=0;i<r.nodes.length;i++) {
         const v=r.velocities[i];r.old[i].copy(r.nodes[i]);v.y-=gravity()*h;
@@ -1476,6 +1536,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
         balance.addScaledVector(r.velocities[i],MASSES[i]/MASS_SUM);
       }
       const touching=r.contacts.some(Boolean);
+      if(touching&&!wasSupported&&window.People&&People.terrainImpact){
+        let landing=null;for(const c of r.contacts)if(c&&c.incomingSpeed>5.3&&(!landing||c.incomingSpeed>landing.incomingSpeed))landing=c;
+        if(landing){const point=r.nodes[landing.index].clone();point.y-=r.radii[landing.index];People.terrainImpact(p,landing.incomingSpeed,point);}
+      }
       for(let i=0;i<r.nodes.length;i++) {
         const v=r.velocities[i];
         if(r.contacts[i]){v.x*=Math.exp(-18*h);v.z*=Math.exp(-18*h);if(v.y<.35)v.y=0}
@@ -1517,7 +1581,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     p.state='fall';return false;
   }
   function beginFrame(people){activeCount=people.reduce((n,p)=>n+(p.ragdoll&&!p.ragdoll.sleeping?1:0),0);frame++;}
-  window.NPCRagdoll={create,step,impulse,accelerate,beginFrame};
+  window.NPCRagdoll={create,step,impulse,accelerate,relocate,beginFrame};
 })();
 
 </script>
@@ -1541,9 +1605,15 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   const _bodyQuat = new T.Quaternion(), _bodyOldQuat = new T.Quaternion(), _shapeLocalQuat = new T.Quaternion();
   const _sweepQuat = new T.Quaternion(), _sweepOffset = new T.Vector3(), _sweepBodyPos = new T.Vector3();
   const bodySweepShapes = [];
+  const bodySweepPoses=[],materialCache=new WeakMap(),materialCandidates=[],materialSeen=new Set();
+  const _materialLo=new T.Vector3(),_materialHi=new T.Vector3(),_materialPoint=new T.Vector3(),_materialRotation=new T.Quaternion();
   let bodySweepShapeCount = 0, bodySweepSteps = 1;
   const _contact = new T.Vector3(), _contactVelocity = new T.Vector3(), _omega = new T.Vector3();
   const _impactVelocity = new T.Vector3();
+  const _contactNormal = new T.Vector3(), _contactLocal = new T.Vector3(), _personMotion = new T.Vector3(), _incomingMotion = new T.Vector3();
+  const _supportMotion = new T.Vector3(), _pointArm = new T.Vector3();
+  const impactContact={velocity:new T.Vector3(),mass:0,speed:0,energy:0,landing:false};
+  let contactShapeIndex=0,contactSampleIndex=0,contactInitialOverlap=false,contactMaterial=null;
   const _before = new T.Vector3(), _normal = new T.Vector3(), _closest = new T.Vector3();
   const _staticHalf = new T.Vector3(), _staticCenter = new T.Vector3();
   const _surfaceA = new T.Vector3(), _surfaceB = new T.Vector3(), _surfaceQ = new T.Quaternion(), _surfaceNormal = new T.Vector3();
@@ -1929,6 +1999,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const angle = _bodyOldQuat.angleTo(_bodyQuat);
     const maxAngle = Math.min(.16, Math.sqrt(.04 / Math.max(.1, reach)));
     bodySweepSteps = Math.max(1, Math.min(96, Math.ceil(angle / maxAngle)));
+    for(let step=0;step<=bodySweepSteps;step++){
+      let pose=bodySweepPoses[step];if(!pose)pose=bodySweepPoses[step]={position:new T.Vector3(),quaternion:new T.Quaternion(),inverse:new T.Quaternion()};
+      const t=step/bodySweepSteps;pose.position.copy(old).lerp(body.position,t);pose.quaternion.copy(_bodyOldQuat).slerp(_bodyQuat,t);pose.inverse.copy(pose.quaternion).invert();
+    }
     bodySweepShapeCount = 0;
     const count = rb && rb.shapes && rb.shapes.length || 1;
     for (let s = 0; s < count; s++) {
@@ -1936,7 +2010,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       if (proxy.unsupported) continue;
       let sweep = bodySweepShapes[bodySweepShapeCount];
       if (!sweep) sweep = bodySweepShapes[bodySweepShapeCount] = { transforms: [] };
-      bodySweepShapeCount++; sweep.proxy = proxy;
+      bodySweepShapeCount++; sweep.proxy = proxy; sweep.shapeIndex=s;
       const off = rb && rb.shapeOffsets && rb.shapeOffsets[s];
       _sweepOffset.set(off ? off.x : 0, off ? off.y : 0, off ? off.z : 0);
       const orient = rb && rb.shapeOrientations && rb.shapeOrientations[s];
@@ -1953,28 +2027,172 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       }
     }
   }
-  function bodyTouchesPerson(p) {
+  function materialGeometry(body) {
+    let cache=materialCache.get(body);
+    if(!cache||cache.parts!==body.parts||cache.count!==body.parts.length){
+      cache={parts:body.parts,count:body.parts.length,grid:new Map(),complete:true};
+      for(const part of body.parts){
+        const block=part.block;if(!block||!part.local||!(block.sx>0&&block.sy>0&&block.sz>0)){cache.complete=false;continue;}
+        const rotation=new T.Quaternion().copy(part.rotation||new T.Quaternion());
+        const item={block,local:part.local,half:new T.Vector3(block.sx*.5,block.sy*.5,block.sz*.5),rotation,inverse:rotation.clone().invert()};
+        _matrix.makeRotationFromQuaternion(rotation);const e=_matrix.elements,h=item.half;
+        const hx=Math.abs(e[0])*h.x+Math.abs(e[4])*h.y+Math.abs(e[8])*h.z,hy=Math.abs(e[1])*h.x+Math.abs(e[5])*h.y+Math.abs(e[9])*h.z,hz=Math.abs(e[2])*h.x+Math.abs(e[6])*h.y+Math.abs(e[10])*h.z;
+        for(let x=Math.floor((part.local.x-hx)/6);x<=Math.floor((part.local.x+hx)/6);x++)for(let y=Math.floor((part.local.y-hy)/6);y<=Math.floor((part.local.y+hy)/6);y++)for(let z=Math.floor((part.local.z-hz)/6);z<=Math.floor((part.local.z+hz)/6);z++){
+          const key=x+','+y+','+z;let list=cache.grid.get(key);if(!list)cache.grid.set(key,list=[]);list.push(item);
+        }
+      }
+      materialCache.set(body,cache);
+    }
+    return cache;
+  }
+  function materialsInBounds(body,shape) {
+    const cache=materialGeometry(body);materialSeen.clear();materialCandidates.length=0;
+    for(let x=Math.floor(_materialLo.x/6);x<=Math.floor(_materialHi.x/6);x++)for(let y=Math.floor(_materialLo.y/6);y<=Math.floor(_materialHi.y/6);y++)for(let z=Math.floor(_materialLo.z/6);z<=Math.floor(_materialHi.z/6);z++){
+      const list=cache.grid.get(x+','+y+','+z);if(!list)continue;
+      for(const item of list)if(!materialSeen.has(item)&&(!shape?.materialBlocks||shape.materialBlocks.has(item.block))){materialSeen.add(item);materialCandidates.push(item);}
+    }
+    return materialCandidates;
+  }
+  function nearbyMaterials(body,shape,point,radius) {
+    _materialLo.set(Infinity,Infinity,Infinity);_materialHi.set(-Infinity,-Infinity,-Infinity);
+    for(let step=0;step<=bodySweepSteps;step++){const pose=bodySweepPoses[step];_materialPoint.copy(point).sub(pose.position).applyQuaternion(pose.inverse);_materialLo.min(_materialPoint);_materialHi.max(_materialPoint);}
+    _materialLo.addScalar(-radius-.05);_materialHi.addScalar(radius+.05);
+    return materialsInBounds(body,shape);
+  }
+  function queryMaterialParts(body,lo,hi) {
+    if(!body.parts?.length||!materialGeometry(body).complete)return null;
+    _materialLo.set(Infinity,Infinity,Infinity);_materialHi.set(-Infinity,-Infinity,-Infinity);
+    const oldPosition=body.oldPosition||body.position,oldQuaternion=body.oldQuaternion||body.quaternion;
+    let reach=0;
+    for(let pose=0;pose<2;pose++){
+      const position=pose?body.position:oldPosition;_materialRotation.copy(pose?body.quaternion:oldQuaternion).invert();
+      for(let corner=0;corner<8;corner++){
+        _materialPoint.set(corner&1?hi.x:lo.x,corner&2?hi.y:lo.y,corner&4?hi.z:lo.z).sub(position);reach=Math.max(reach,_materialPoint.length());
+        _materialPoint.applyQuaternion(_materialRotation);_materialLo.min(_materialPoint);_materialHi.max(_materialPoint);
+      }
+    }
+    const arc=reach*2*Math.sin(body.quaternion.angleTo(oldQuaternion)*.25)+.05;
+    _materialLo.addScalar(-arc);_materialHi.addScalar(arc);
+    // Internal collision helper: a borrowed candidate array, valid until the
+    // next query. Cached geometry is immutable for the body's lifetime.
+    return materialsInBounds(body,null);
+  }
+  function materialTouchesPerson(p,body,shape,point,radius) {
+    const candidates=nearbyMaterials(body,shape,point,radius);
+    for(const item of candidates)for(let step=1;step<=bodySweepSteps;step++){
+      const before=bodySweepPoses[step-1],after=bodySweepPoses[step];
+      _a.copy(point).sub(before.position).applyQuaternion(before.inverse).sub(item.local).applyQuaternion(item.inverse);
+      _b.copy(point).sub(after.position).applyQuaternion(after.inverse).sub(item.local).applyQuaternion(item.inverse);
+      const t=segmentBox(_a,_b,item.half,radius);if(t<0)continue;
+      contactInitialOverlap=Math.abs(_a.x)<=item.half.x+radius&&Math.abs(_a.y)<=item.half.y+radius&&Math.abs(_a.z)<=item.half.z+radius;
+      _contactLocal.copy(_a).lerp(_b,t);_closest.copy(_contactLocal).clamp(_min.copy(item.half).negate(),item.half);_contactNormal.copy(_contactLocal).sub(_closest);
+      if(_contactNormal.lengthSq()<1e-12){let gap=Infinity,axis='y';for(const key of ['x','y','z']){const d=item.half[key]-Math.abs(_contactLocal[key]);if(d<gap){gap=d;axis=key;}}_contactNormal.set(0,0,0);_contactNormal[axis]=_contactLocal[axis]<0?-1:1;}
+      else _contactNormal.normalize();
+      _materialRotation.copy(before.quaternion).slerp(after.quaternion,t);_contactNormal.applyQuaternion(item.rotation).applyQuaternion(_materialRotation);
+      _contact.copy(point).addScaledVector(_contactNormal,-radius);contactMaterial=item.block;
+      if(acceptBodyContact(p,body))return true;
+    }
+    contactMaterial=null;return false;
+  }
+  function bodyTouchesPerson(p,damageBody) {
     const samples = p.ragdoll ? p.ragdoll.collisionSamples : p.collider ? p.collider.samples : collisionSamples;
     for (let s = 0; s < bodySweepShapeCount; s++) {
       const sweep = bodySweepShapes[s], proxy = sweep.proxy;
-      for (const sample of samples) {
+      for (let sampleIndex=0;sampleIndex<samples.length;sampleIndex++) {
+          const sample=samples[sampleIndex];
           if (sample.position) _point.copy(sample.position);
           else _point.set(0, sample.y * p.scale, 0).applyQuaternion(p.quaternion).add(p.position);
           const radius = sample.radius * (sample.position ? 1 : p.scale);
           for (let step = 1; step <= bodySweepSteps; step++) {
             const before = sweep.transforms[step - 1], after = sweep.transforms[step];
             _a.copy(_point).sub(before.position); _b.copy(_point).sub(after.position);
-            let hit;
-            if (proxy.radius !== undefined) hit = segmentSphere(_a, _b, proxy.radius + radius);
+            let hit,t=0;
+            if (proxy.radius !== undefined) {
+              const rr=proxy.radius+radius;hit=segmentSphere(_a,_b,rr);contactInitialOverlap=_a.lengthSq()<=rr*rr;
+              if(hit&&!contactInitialOverlap){_contactLocal.copy(_b).sub(_a);const length2=_contactLocal.lengthSq(),dot=_a.dot(_contactLocal),disc=dot*dot-length2*(_a.lengthSq()-rr*rr);t=length2&&disc>=0?Math.max(0,Math.min(1,(-dot-Math.sqrt(disc))/length2)):0;}
+              _contactNormal.copy(_a).lerp(_b,t).normalize();
+              if(_contactNormal.lengthSq()<.1)_contactNormal.copy(_a).sub(_b).normalize();
+            }
             else {
               _a.applyQuaternion(before.inverse); _b.applyQuaternion(after.inverse);
-              hit = segmentBox(_a, _b, proxy.half, radius) >= 0;
+              t=segmentBox(_a,_b,proxy.half,radius);hit=t>=0;
+              contactInitialOverlap=Math.abs(_a.x)<=proxy.half.x+radius&&Math.abs(_a.y)<=proxy.half.y+radius&&Math.abs(_a.z)<=proxy.half.z+radius;
+              if(hit){
+                _contactLocal.copy(_a).lerp(_b,t);_closest.copy(_contactLocal).clamp(_min.copy(proxy.half).negate(),proxy.half);
+                _contactNormal.copy(_contactLocal).sub(_closest);
+                if(_contactNormal.lengthSq()<1e-12){let gap=Infinity,axis='y';for(const key of ['x','y','z']){const d=proxy.half[key]-Math.abs(_contactLocal[key]);if(d<gap){gap=d;axis=key;}}_contactNormal.set(0,0,0);_contactNormal[axis]=_contactLocal[axis]<0?-1:1;}
+                else _contactNormal.normalize();
+                _sweepQuat.copy(before.inverse).slerp(after.inverse,t).invert();_contactNormal.applyQuaternion(_sweepQuat);
+              }
             }
-            if (hit) { _contact.copy(_point); return true; }
+            if (hit) {
+              _contact.copy(_point).addScaledVector(_contactNormal,-radius);contactShapeIndex=sweep.shapeIndex;contactSampleIndex=sampleIndex;contactMaterial=null;
+              const shape=damageBody?.rb?.shapes?.[contactShapeIndex];
+              if(damageBody&&!damageBody.blast&&damageBody.parts?.length>1&&(shape?.materialBlocks?.size>1||damageBody.parts.length>(damageBody.rb?.shapes?.length||1))&&materialGeometry(damageBody).complete){
+                if(materialTouchesPerson(p,damageBody,shape,_point,radius))return true;
+                break;
+              }
+              if(!damageBody||damageBody.blast||acceptBodyContact(p,damageBody))return true;
+            }
           }
       }
     }
     return false;
+  }
+  function pointVelocity(body,point,out,incoming=false) {
+    const v=incoming&&body.preVelocity?body.preVelocity:body.velocity;
+    out.copy(v||_pointArm.set(0,0,0));
+    const w=incoming&&body.preAngular?body.preAngular:body.rb?.angularVelocity;
+    if(w){_pointArm.copy(point).sub(body.position);out.x+=w.y*_pointArm.z-w.z*_pointArm.y;out.y+=w.z*_pointArm.x-w.x*_pointArm.z;out.z+=w.x*_pointArm.y-w.y*_pointArm.x;}
+    return out;
+  }
+  function transferSupport(p,body) {
+    const surface=p.elevatedSurface,block=surface?.block||surface?.sourceBlock;
+    if(!block||block.body!==body||surface.body===body)return;
+    // A static floor becoming a moving compound is still the same supporting
+    // surface. Preserve its local point before the physics contact pass runs.
+    surface.sourceBlock=block;surface.body=body;surface.block=null;
+    surface.localPoint=surface.point.clone().sub(body.oldPosition||body.position).applyQuaternion(_surfaceQ.copy(body.oldQuaternion||body.quaternion).invert());
+    surface.shape=body.rb?.shapes?.findIndex(s=>s.block===block||s.materialBlocks?.has(block));
+  }
+  function contactIsSupport(p,body) {
+    if(_contactNormal.y<.35)return false;
+    const surface=p.elevatedSurface,shape=body.rb?.shapes?.[contactShapeIndex];
+    if(surface?.body===body){
+      const matches=surface.sourceBlock?contactMaterial?contactMaterial===surface.sourceBlock:shape?.block===surface.sourceBlock||shape?.materialBlocks?.has(surface.sourceBlock):surface.shape===undefined||surface.shape<0||surface.shape===contactShapeIndex;
+      // Only the supporting top face near the soles is exempt. A different
+      // ceiling/wall in the same compound can still strike the head or torso.
+      if(matches&&Math.abs(_contact.y-surface.point.y)<.65*p.scale&&(!p.ragdoll&&contactSampleIndex===0))return true;
+    }
+    if(p.ragdoll){for(const c of p.ragdoll.supports||[])if(c.index===contactSampleIndex&&(c.body===body||c.block?.body===body)){
+      if(!c.block||(contactMaterial?contactMaterial===c.block:shape?.block===c.block||shape?.materialBlocks?.has(c.block)||body.parts?.length===1))return true;
+    }}
+    return false;
+  }
+  function acceptBodyContact(p,body) {
+    if(contactIsSupport(p,body))return false;
+    _personMotion.copy(p.velocity);
+    if(p.elevatedSurface?.body&&p.state!=='airborne'&&!p.ragdoll&&p.supportVelocity)_personMotion.add(p.supportVelocity);
+    pointVelocity(body,_contact,_contactVelocity);pointVelocity(body,_contact,_incomingMotion,true);
+    if(_incomingMotion.dot(_contactNormal)>_contactVelocity.dot(_contactNormal))_contactVelocity.copy(_incomingMotion);
+    const closing=_contactVelocity.dot(_contactNormal)-_personMotion.dot(_contactNormal);
+    // Sliding, separating, and pre-existing sole overlap are not impacts.
+    if(!(closing>.7))return false;
+    const shape=body.rb?.shapes?.[contactShapeIndex],part=body.parts?.length===1?body.parts[0].block:null;
+    const surface=p.elevatedSurface,source=surface?.sourceBlock||surface?.block;
+    const sameSupportingMaterial=surface?.body===body&&source&&(contactMaterial?contactMaterial===source:shape?.block===source||shape?.materialBlocks?.size===1&&shape.materialBlocks.has(source)||part===source);
+    // A fast upward step of the very floor carrying this person can reach the
+    // lower torso before the visual feet follow. It remains an upward landing
+    // impulse on the person, not a multi-ton object dropping onto their chest.
+    const topLanding=_contactNormal.y>.55&&_contact.y<p.position.y&&(p.ragdoll||contactSampleIndex===0||sameSupportingMaterial);
+    if(topLanding&&closing<=5.3)return false;
+    let mass=body.parts?.length?contactMaterial?.mass||shape?.materialMass||part?.mass||Math.min(2000,body.mass):body.mass;
+    // A person walking into a stationary/retreating wall brings their own mass,
+    // not the kinetic energy of the entire wall, into that contact.
+    if(_contactVelocity.dot(_contactNormal)<=.7)mass=Math.min(mass,p.mass);
+    impactContact.mass=Math.max(.001,mass||1);impactContact.speed=closing;impactContact.landing=topLanding;
+    impactContact.energy=.5*(topLanding?p.mass:impactContact.mass)*closing*closing;
+    impactContact.velocity.copy(_contactNormal).multiplyScalar(closing);return true;
   }
   function supportHeight(p) {
     const q = p.quaternion;
@@ -1985,11 +2203,43 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const half = p.collider && p.collider.half;
     return (Math.abs(yx) * (half ? half[0] : .39) + Math.abs(yy) * .91 + Math.abs(yz) * (half ? half[2] : .27)) * p.scale;
   }
-  function applyPersonImpact(p, body, relative, relativeSpeed, energy, mass, projectile) {
+  function damagePerson(p, rawDamage, kind, energy, mass, speed) {
+    if (!Number.isFinite(rawDamage) || rawDamage <= 0 || p.state === 'carried') return 0;
+    // Damage is a game-scale conversion of real contact energy, not a height
+    // multiplier. Higher falls already produce higher impact velocity under g.
+    const before = p.hp, damage = Math.min(before, rawDamage);
+    p.hp = Math.max(0, before - damage); p.health = p.hp; p.dead = p.hp <= 0;
+    p.lastDamage = damage; p.rawDamage = rawDamage; p.totalDamage += damage;
+    p.lastDamageInfo = { kind, damage, rawDamage, energy, mass, speed, time: clock };
+    if (p.dead && before > 0) { p.deathTime = clock; p.fatalDamage = p.lastDamageInfo; }
+    return damage;
+  }
+  function terrainImpact(p, speed, point, contactInfo) {
+    // Called only by actual floor contacts, including a previously knocked-down
+    // living ragdoll. One landing has many joint contacts: charge it only once.
+    if (!p || !(speed > 5.3) || p.dead || p.state === 'carried' || clock - p.lastTerrainDamage < .45) return 0;
+    const energy = .5 * p.mass * speed * speed;
+    const rawDamage = .5 * p.mass * (speed * speed - 5.3 * 5.3) / 30;
+    const damage = damagePerson(p, rawDamage, 'fall', energy, p.mass, speed);
+    if(contactInfo&&damage>0)p.lastDamageInfo.contact=contactInfo;
+    p.lastTerrainDamage = clock; p.lastLandingSpeed = speed; p.lastImpactKind = 'fall';
+    if (damage > 0) {
+      p.hits++; p.lastHit = clock;
+      _contact.copy(point || p.position); _impactVelocity.copy(p.velocity); _impactVelocity.y = -speed;
+      impactBlood(p, _contact, _impactVelocity, energy, point ? point.y : undefined);
+      if (G.onPedestrianHit) G.onPedestrianHit(p, energy, {type:'fall', position: _contact.clone(), velocity: _impactVelocity.clone()});
+    }
+    return damage;
+  }
+  function applyPersonImpact(p, body, relative, relativeSpeed, energy, mass, projectile, explicitKick, contactInfo) {
     const wasAirborne = p.state === 'airborne';
-    const impulse = Math.min(38, relativeSpeed * mass / (mass + p.mass) * .8);
-    const downwardEnergy = .5 * Math.min(mass, 1200) * Math.min(0, relative.y) ** 2;
+    const impulse = Number.isFinite(explicitKick) ? Math.max(0, Math.min(38, explicitKick)) : Math.min(38, relativeSpeed * mass / (mass + p.mass) * .8);
+    const downwardEnergy = .5 * mass * Math.min(0, relative.y) ** 2;
     const fallingDebris = body.parts && body.parts.some(part => part.block) && relative.y < -1 && downwardEnergy >= 65;
+    const kind = fallingDebris ? 'falling-debris' : body.blast ? 'blast' : projectile ? 'projectile' : 'body';
+    const previousDamage=p.lastDamageInfo;
+    damagePerson(p, Math.max(0, energy - 40) / (body.blast ? 30 : projectile ? 50 : 12), kind, energy, mass, relativeSpeed);
+    if(contactInfo&&p.lastDamageInfo!==previousDamage)p.lastDamageInfo.contact=contactInfo;
     if (p.talkPartner) endTalk(p);
     p.lastBody = body.id === undefined ? body : body.id; p.lastHit = clock; p.hits++;
     _axis.copy(relative).normalize();
@@ -1997,12 +2247,12 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     _impactVelocity.copy(_axis).multiplyScalar(impulse);
     impactBlood(p, _contact, relative, energy);
     p.velocity.addScaledVector(_axis, impulse);
-    p.lastImpactKind = fallingDebris ? 'falling-debris' : projectile ? 'projectile' : 'body';
+    p.lastImpactKind = kind;
     // A small fast brick can knock someone unconscious without throwing them.
     // Falling debris keeps its downward momentum instead of adding a fake jump.
-    if (energy > 20 && (impulse > 1.2 || fallingDebris || (projectile && energy >= 160))) {
+    if (p.dead || (energy > 20 && (impulse > 1.2 || fallingDebris || (projectile && energy >= 160)))) {
       if (fallingDebris) p.crushed = true;
-      if (relative.y >= -1 && p.state !== 'fall' && p.state !== 'down') p.velocity.y = Math.max(p.velocity.y, Math.min(5.5, impulse * .16));
+      if (!body.blast && relative.y >= -1 && p.state !== 'fall' && p.state !== 'down') p.velocity.y = Math.max(p.velocity.y, Math.min(5.5, impulse * .16));
       p.state = 'fall'; p.restTime = 0; p.supportBlock = null; p.elevatedSurface = null;
       p.angular.set(_axis.z * impulse * .4 + rnd(-1, 1), rnd(-2, 2), -_axis.x * impulse * .4);
       p.angular.clampLength(0, 10);
@@ -2063,7 +2313,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if (speed < .7) return false;
     _contact.copy(hit.point);
     const projectile = { id: 'bullet-' + (++projectileSerial), type: 'projectile', mass: mass, position: hit.point, velocity: velocity };
-    applyPersonImpact(p, projectile, _delta, speed, .5 * Math.min(mass, 1200) * speed * speed, mass, true);
+    applyPersonImpact(p, projectile, _delta, speed, .5 * mass * speed * speed, mass, true);
     return true;
   }
   function collideBody(body, oldPosition, dt) {
@@ -2076,6 +2326,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     let hits = 0;
     for (const p of citizens) {
       if (p.state === 'carried') continue;
+      if(!body.blast)transferSupport(p,body);
       const personReach = p.ragdoll ? p.ragdoll.reach : p.collider ? Math.hypot(...p.collider.half) * p.scale : 1.15;
       // Test the center sweep against a radius that includes every real shape
       // offset. Rotated long chunks may extend beyond body.half's old envelope.
@@ -2086,23 +2337,38 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       const id = body.id === undefined ? body : body.id;
       if (p.lastBody === id && clock - p.lastHit < .45) continue;
       if (!sweepReady) { prepareBodySweep(body, old, reach); sweepReady = true; }
-      if (!bodyTouchesPerson(p)) continue;
+      if (!bodyTouchesPerson(p,body)) continue;
       const mass = Math.max(.1, body.mass || 1);
-      _contactVelocity.copy(body.velocity);
-      // The world solver may already have stopped a falling brick on the road.
-      // Its swept path still struck the toy before that stop, so use incoming momentum.
-      if (body.preVelocity && body.preVelocity.lengthSq() > _contactVelocity.lengthSq()) _contactVelocity.copy(body.preVelocity);
-      if (body.rb && body.rb.angularVelocity) {
-        const w = body.rb.angularVelocity;
-        _omega.set(w.x, w.y, w.z);
-        if (body.preAngular && body.preAngular.lengthSq() > _omega.lengthSq()) _omega.copy(body.preAngular);
-        _contactVelocity.add(_delta.copy(_contact).sub(body.position).cross(_omega).negate());
+      if (body.blast && typeof body.blast.impulseAt === 'function') {
+        const samples = p.ragdoll ? p.ragdoll.collisionSamples : p.collider ? p.collider.samples : collisionSamples;
+        let distance = Infinity;
+        for (const sample of samples) {
+          if (sample.position) _point.copy(sample.position);
+          else _point.set(0, sample.y * p.scale, 0).applyQuaternion(p.quaternion).add(p.position);
+          const radius = sample.radius * (sample.position ? 1 : p.scale);
+          const d = Math.max(0, _point.distanceTo(body.position) - radius);
+          if (d < distance) { distance = d; _contact.copy(_point); }
+        }
+        const momentum = body.blast.impulseAt(distance, p.position);
+        if (!Number.isFinite(momentum) || momentum <= 0) continue;
+        const kick = Math.min(38, momentum / Math.max(1, p.mass));
+        _contactVelocity.copy(p.position).sub(body.position).normalize().multiplyScalar(kick);
+        // Pressure changes momentum radially. It is neither a falling solid
+        // nor an upward-moving projectile, and cannot invent a vertical jump.
+        applyPersonImpact(p, body, _contactVelocity, kick, .5 * p.mass * kick * kick, mass, false, kick);
+        hits++; continue;
       }
-      const relative = _delta.copy(_contactVelocity).sub(p.velocity);
-      const relativeSpeed = relative.length();
-      if (relativeSpeed < .7 && speed < .7) continue;
-      const energy = .5 * Math.min(mass, 1200) * relativeSpeed * relativeSpeed;
-      applyPersonImpact(p, body, relative, relativeSpeed, energy, mass, false);
+      const shape=body.rb?.shapes?.[contactShapeIndex],support=p.elevatedSurface;
+      const contactInfo={shape:contactShapeIndex,sample:contactSampleIndex,normal:_contactNormal.toArray(),point:_contact.toArray(),initialOverlap:contactInitialOverlap,
+        supportBody:support?.body?.id??null,sourceBlock:support?.sourceBlock?.id??support?.block?.id??null,
+        supportsSource:!!(shape?.materialBlocks?.has(support?.sourceBlock)||shape?.materialBlocks?.has(support?.block)),
+        materialBlocks:shape?.materialBlocks?.size??(shape?.block?1:0),materialBlock:contactMaterial?.id??shape?.block?.id??null};
+      if(impactContact.landing){
+        terrainImpact(p,impactContact.speed,_contact,contactInfo);
+        if(p.dead||impactContact.speed>8.8){p.state='fall';p.elevatedSurface=null;p.restTime=0;if(window.NPCRagdoll&&!p.ragdoll)NPCRagdoll.create(p,G);}
+      }else {
+        applyPersonImpact(p, body, impactContact.velocity, impactContact.speed, impactContact.energy, impactContact.mass, false,undefined,contactInfo);
+      }
       body.velocity.multiplyScalar(1 - Math.min(.22, p.mass / (mass + p.mass) * .16));
       if (body.rb && body.rb.velocity) body.rb.velocity.set(body.velocity.x, body.velocity.y, body.velocity.z);
       if (body.sleeping) { body.sleeping = false; if (body.rb && body.rb.wakeUp) body.rb.wakeUp(); }
@@ -2111,6 +2377,41 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     return hits;
   }
   function panicNearby(position, strength) { for (const other of citizens) panic(other, position, strength); }
+
+  function occupiesBody(body) {
+    if (!body || body.removed || !body.position || !body.half) return false;
+    const reach = bodyReach(body), rb = body.rb, shapes = [];
+    const rotation = new T.Quaternion().copy(body.quaternion || new T.Quaternion());
+    for (let i = 0, count = rb?.shapes?.length || 1; i < count; i++) {
+      const proxy = rb?.shapes?.length ? proxyForShape(rb.shapes[i]) : {half: body.half};
+      if (proxy.unsupported) continue;
+      const off = rb?.shapeOffsets?.[i], orient = rb?.shapeOrientations?.[i];
+      const center = new T.Vector3(off?.x || 0, off?.y || 0, off?.z || 0).applyQuaternion(rotation).add(body.position);
+      const inverse = rotation.clone(); if (orient) inverse.multiply(new T.Quaternion(orient.x, orient.y, orient.z, orient.w));
+      shapes.push({proxy, center, inverse: inverse.invert()});
+    }
+    for (const p of citizens) {
+      if (p.state === 'carried') continue;
+      if (p.elevatedSurface?.body === body || p.supportBlock?.body === body || p.ragdoll?.supports?.some(c => c.body === body)) return true;
+      const personReach = p.ragdoll?.reach || (p.collider ? Math.hypot(...p.collider.half) * p.scale : 1.2 * p.scale);
+      if (p.position.distanceToSquared(body.position) > (reach + personReach + .16) ** 2) continue;
+      const samples = p.ragdoll ? p.ragdoll.collisionSamples : p.collider ? p.collider.samples : collisionSamples;
+      for (const sample of samples) {
+        if (sample.position) _point.copy(sample.position);
+        else _point.set(0, sample.y * p.scale, 0).applyQuaternion(p.quaternion).add(p.position);
+        const radius = sample.radius * (sample.position ? 1 : p.scale) + .16;
+        for (const shape of shapes) {
+          _a.copy(_point).sub(shape.center).applyQuaternion(shape.inverse);
+          if (shape.proxy.radius !== undefined) { if (_a.lengthSq() <= (shape.proxy.radius + radius) ** 2) return true; }
+          else {
+            _closest.copy(_a).clamp(_min.copy(shape.proxy.half).negate(), shape.proxy.half);
+            if (_closest.distanceToSquared(_a) <= radius * radius) return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
 
   function collideRestingBody(body, dt) {
     if (!G || !body || body.removed || !body.half) return 0;
@@ -2172,6 +2473,23 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       if (Math.abs(body.position.x - x) > reach + radius || Math.abs(body.position.z - z) > reach + radius || body.position.y + reach < minY || body.position.y - reach > maxY) continue;
       const rb = body.rb, count = rb && rb.shapes && rb.shapes.length || 1;
       const q = body.quaternion || new T.Quaternion();
+      if(body.parts?.length&&materialGeometry(body).complete){
+        // Broad rigid-body proxies may join several storeys. Query the cached
+        // real material OBBs so rooms stay empty and their own floors support
+        // citizens after a static building becomes a compound or child chunk.
+        _surfaceQ.copy(q).invert();_materialLo.set(Infinity,Infinity,Infinity);_materialHi.set(-Infinity,-Infinity,-Infinity);
+        for(let corner=0;corner<8;corner++){
+          _materialPoint.set(x+(corner&1?radius:-radius),corner&2?maxY:minY,z+(corner&4?radius:-radius)).sub(body.position).applyQuaternion(_surfaceQ);
+          _materialLo.min(_materialPoint);_materialHi.max(_materialPoint);
+        }
+        for(const part of materialsInBounds(body,null)){
+          const center=part.local.clone().applyQuaternion(q).add(body.position),quaternion=q.clone().multiply(part.rotation);
+          const reach=part.half.length();
+          if(Math.abs(center.x-x)>reach+radius||Math.abs(center.z-z)>reach+radius||center.y+reach<minY||center.y-reach>maxY)continue;
+          shapes.push({half:part.half,center,quaternion,block:null,body,sourceBlock:part.block});
+        }
+        continue;
+      }
       for (let s = 0; s < count; s++) {
         const proxy = rb && rb.shapes && rb.shapes.length ? proxyForShape(rb.shapes[s]) : { half: body.half };
         if (proxy.unsupported) continue;
@@ -2205,7 +2523,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       if (_surfaceNormal.y < slope) continue;
       const point = _surfaceA.applyQuaternion(shape.quaternion).add(shape.center).clone();
       if (point.y < low - .004 || point.y > high + .004 || (best && point.y <= best.point.y)) continue;
-      best = { point, normal: _surfaceNormal.clone(), block: shape.block, body: shape.body, shape: shape.shape,
+      best = { point, normal: _surfaceNormal.clone(), block: shape.block, body: shape.body, shape: shape.shape,sourceBlock:shape.sourceBlock,
         localPoint: point.clone().sub(shape.body ? shape.body.position : shape.center).applyQuaternion(shape.body ? new T.Quaternion().copy(shape.body.quaternion).invert() : _surfaceQ) };
     }
     return best;
@@ -2230,12 +2548,40 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     }
     return true;
   }
+  function ragdollBottom(p) {
+    let bottom=Infinity;
+    for(let i=0;i<p.ragdoll.nodes.length;i++)bottom=Math.min(bottom,p.ragdoll.nodes[i].y-p.ragdoll.radii[i]);
+    return bottom;
+  }
+  function resolveRagdollPlacement(p,target,requestedY) {
+    const r=p.ragdoll,reach=r.reach+.4,shapes=nearbySurfaces(target.x,target.z,requestedY-.3,requestedY+reach*2,reach);
+    const surface=surfaceAt(shapes,target.x,target.z,requestedY-.22,requestedY+.22,.86);
+    if(!surface||surface.body&&(surface.body.velocity.lengthSq()>.64||surface.body.rb?.angularVelocity.lengthSquared()>.16))return null;
+    const position=new T.Vector3(target.x,surface.point.y+p.position.y-ragdollBottom(p)+.012,target.z);
+    const translation=position.clone().sub(p.position),bounds=G.pedestrianBounds;
+    for(let i=0;i<r.nodes.length;i++) {
+      const node=r.nodes[i].clone().add(translation),radius=r.radii[i],margin=radius*.65+.025;
+      if(node.x-radius<(bounds?.minX??-69)||node.x+radius>(bounds?.maxX??69)||node.z-radius<(bounds?.minZ??-69)||node.z+radius>(bounds?.maxZ??69))return null;
+      // Validate the entire lying footprint, including head, hands and feet.
+      // A safe root point alone could leave half a rescued body over a roof edge.
+      for(const [dx,dz] of [[0,0],[-margin,0],[margin,0],[0,-margin],[0,margin]]) {
+        if(!surfaceAt(shapes,node.x+dx,node.z+dz,surface.point.y-.08,surface.point.y+.08,.86))return null;
+      }
+      for(const shape of shapes) {
+        _surfaceA.copy(node).sub(shape.center).applyQuaternion(_surfaceQ.copy(shape.quaternion).invert());
+        if(shape.radius!==undefined){if(_surfaceA.lengthSq()<(shape.radius+radius-.008)**2)return null;}
+        else {_closest.copy(_surfaceA).clamp(_min.copy(shape.half).negate(),shape.half);if(_closest.distanceToSquared(_surfaceA)<(radius-.008)**2)return null;}
+      }
+    }
+    surface.ragdollPosition=position;return surface;
+  }
   function resolvePlacement(p, target) {
     if (!G || !target || !Number.isFinite(target.x) || !Number.isFinite(target.z)) return null;
     const requestedY = Number.isFinite(target.y) ? target.y : groundAt(target.x, target.z), bounds = G.pedestrianBounds;
     const margin = .24 * p.scale;
     if (target.x < (bounds ? bounds.minX : -69) + margin || target.x > (bounds ? bounds.maxX : 69) - margin ||
         target.z < (bounds ? bounds.minZ : -69) + margin || target.z > (bounds ? bounds.maxZ : 69) - margin) return null;
+    if(p.ragdoll)return resolveRagdollPlacement(p,target,requestedY);
     const shapes = nearbySurfaces(target.x, target.z, requestedY - .26, requestedY + 2 * p.scale, .8 * p.scale);
     const surface = surfaceAt(shapes, target.x, target.z, requestedY - .22, requestedY + .22, .86);
     if (!surface) return null;
@@ -2288,18 +2634,21 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     p.pauseTime = Math.max(p.pauseTime, .35); p.reverseCooldown = .5;
   }
   function pickUpPerson(p) {
-    if (!G || !p || p.state === 'fall' || p.state === 'down' || p.ragdoll) return null;
+    if (!G || !p || p.dead || !(p.hp>0)) return null;
     if (carried) return carried;
     if (p.talkPartner) endTalk(p);
+    if(!p.ragdoll&&(p.state==='fall'||p.state==='down')&&window.NPCRagdoll)NPCRagdoll.create(p,G);
     carryOrigin = { position: p.position.clone(), route: p.route, next: p.next, direction: p.direction, yaw: p.yaw,
-      footY: p.elevatedSurface ? p.elevatedSurface.point.y : p.position.y - .91 * p.scale };
+      footY: p.ragdoll ? ragdollBottom(p) : p.elevatedSurface ? p.elevatedSurface.point.y : p.position.y - .91 * p.scale };
     carried = p; p.state = 'carried'; p.velocity.set(0, 0, 0); p.angular.set(0, 0, 0);
-    p.quaternion.setFromAxisAngle(UP, p.yaw); p.pauseTime = 0; p.panicTime = 0; p.elevatedSurface = null;
+    if(p.ragdoll&&window.NPCRagdoll)NPCRagdoll.relocate(p,p.position,true);
+    else p.quaternion.setFromAxisAngle(UP, p.yaw);
+    p.pauseTime = 0; p.panicTime = 0; p.elevatedSurface = null;
     return p;
   }
   function pickUpRandom() {
     if (carried) return carried;
-    const eligible = citizens.filter(p => p.state !== 'fall' && p.state !== 'down' && !p.ragdoll);
+    const eligible = citizens.filter(p => !p.dead && p.hp>0);
     return eligible.length ? pickUpPerson(eligible[Math.min(eligible.length - 1, Math.floor(random() * eligible.length))]) : null;
   }
   function findCarryTarget(a, b, radius) {
@@ -2309,10 +2658,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     radius = Number.isFinite(radius) ? Math.max(0, radius) : .08;
     let nearest = Infinity, person = null;
     for (const p of citizens) {
-      if (p.state === 'fall' || p.state === 'down' || p.state === 'carried' || p.ragdoll) continue;
-      for (const sample of p.collider ? p.collider.samples : collisionSamples) {
-        _point.set(0, sample.y * p.scale, 0).applyQuaternion(p.quaternion).add(p.position);
-        const r = radius + sample.radius * p.scale, x = a.x - _point.x, y = a.y - _point.y, z = a.z - _point.z;
+      if (p.dead || !(p.hp>0) || p.state === 'carried') continue;
+      for (const sample of p.ragdoll ? p.ragdoll.collisionSamples : p.collider ? p.collider.samples : collisionSamples) {
+        if(sample.position)_point.copy(sample.position);else _point.set(0, sample.y * p.scale, 0).applyQuaternion(p.quaternion).add(p.position);
+        const r = radius + sample.radius * (sample.position?1:p.scale), x = a.x - _point.x, y = a.y - _point.y, z = a.z - _point.z;
         const c = x * x + y * y + z * z - r * r;
         let t = 0;
         if (c > 0) { const dot = x * dx + y * dy + z * dz, d = dot * dot - length2 * c; if (d < 0) continue; t = (-dot - Math.sqrt(d)) / length2; }
@@ -2323,7 +2672,9 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   }
   function pickUpTarget(a, b, radius) { const hit = findCarryTarget(a, b, radius); return hit ? pickUpPerson(hit.person) : null; }
   function moveCarried(position) {
-    if (carried && position && [position.x, position.y, position.z].every(Number.isFinite)) carried.position.copy(position);
+    if (carried && position && [position.x, position.y, position.z].every(Number.isFinite)) {
+      if(carried.ragdoll&&window.NPCRagdoll)NPCRagdoll.relocate(carried,position,true);else carried.position.copy(position);
+    }
     return carried;
   }
   function canPlaceCarried(target) { return !!carried && clearPlacement(carried, target); }
@@ -2331,6 +2682,11 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const surface = placementSurface(target);
     if (!surface) return false;
     const p = carried;
+    if(p.ragdoll&&window.NPCRagdoll) {
+      NPCRagdoll.relocate(p,surface.ragdollPosition,false);p.state='fall';p.elevatedSurface=null;
+      p.fallStartY=surface.point.y;p.fallDistance=0;p.lastLandingSpeed=0;p.restTime=0;
+      carried=null;carryOrigin=null;return true;
+    }
     p.position.set(surface.point.x, surface.point.y + .91 * p.scale, surface.point.z);
     p.elevatedSurface = surface.block || surface.body ? surface : null;
     p.fallStartY = surface.point.y; p.fallDistance = 0; p.lastLandingSpeed = 0;
@@ -2372,7 +2728,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     }
     if (!placeCarried(target)) return false;
     if (unchanged) { p.route = origin.route; p.next = origin.next; p.direction = origin.direction; }
-    p.yaw = origin.yaw; p.quaternion.setFromAxisAngle(UP, p.yaw); p.pauseTime = 1;
+    p.yaw = origin.yaw;if(!p.ragdoll)p.quaternion.setFromAxisAngle(UP, p.yaw);p.pauseTime = 1;
     return true;
   }
 
@@ -2467,6 +2823,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       const floor = groundAt(p.position.x, p.position.z) + supportHeight(p);
       const onGround = p.position.y < floor;
       if (onGround || staticSupport) {
+        if (onGround) terrainImpact(p, Math.max(0, -p.velocity.y), new T.Vector3(p.position.x, groundAt(p.position.x, p.position.z), p.position.z));
         if (onGround) {
           p.position.y = floor;
           if (p.velocity.y < -2.3) { p.velocity.y *= -.2; p.angular.multiplyScalar(.56); }
@@ -2488,7 +2845,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if (p.talkPartner) endTalk(p);
     p.fallStartY = p.position.y - .91 * p.scale; p.fallDistance = 0;
     p.state = 'airborne'; p.pauseTime = 0; p.elevatedSurface = null;
-    if (source && source.body && source.body.velocity) p.velocity.add(source.body.velocity);
+    if (source?.body) p.velocity.add(pointVelocity(source.body,source.point||p.position,_supportMotion));
     p.quaternion.setFromAxisAngle(UP, p.yaw);
   }
   function attract(center, radius, dt, accelerationFunction) {
@@ -2514,13 +2871,17 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   function refreshElevated(p) {
     const previous = p.elevatedSurface;
     if (!previous) return true;
+    const child=previous.sourceBlock?.body;
+    if(child&&!child.removed&&child!==previous.body)transferSupport(p,child);
     if (previous.body) {
       const body = previous.body;
+      pointVelocity(body,previous.point,p.supportVelocity||_supportMotion);
       if (body.removed || body.velocity.y < -1.2 || (body.rb && body.rb.angularVelocity.lengthSquared() > 1.8)) { beginAirborne(p, previous); return false; }
       _standingPoint.copy(previous.localPoint).applyQuaternion(body.quaternion).add(body.position);
     } else {
       const block = previous.block;
-      if (block.alive === false || block.body) { beginAirborne(p, previous); return false; }
+      if(block.body){transferSupport(p,block.body);return refreshElevated(p);}
+      if (block.alive === false) { beginAirborne(p, previous); return false; }
       _standingPoint.copy(previous.localPoint);
       if (block.quaternion) _standingPoint.applyQuaternion(block.quaternion);
       _standingPoint.add(new T.Vector3(block.x, block.y, block.z));
@@ -2538,6 +2899,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     const shapes = nearbySurfaces(p.position.x, p.position.z, _standingPoint.y - .4, _standingPoint.y + .4, .3 * p.scale);
     const next = surfaceAt(shapes, p.position.x, p.position.z, _standingPoint.y - .28, _standingPoint.y + .28, .76);
     if (!next) { beginAirborne(p, previous); return false; }
+    if(next.body&&previous.sourceBlock?.body===next.body){
+      const shape=next.body.rb?.shapes?.[next.shape];
+      if(shape?.block===previous.sourceBlock||shape?.materialBlocks?.has(previous.sourceBlock)||next.body.parts?.length===1)next.sourceBlock=previous.sourceBlock;
+    }
     p.elevatedSurface = next; p.position.y = next.point.y + .91 * p.scale;
     return true;
   }
@@ -2545,20 +2910,17 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     p.position.y = surface.point.y + .91 * p.scale;
     p.elevatedSurface = surface.block || surface.body ? surface : null;
     p.lastLandingSpeed = speed; p.fallDistance = Math.max(0, p.fallStartY - surface.point.y);
-    const energy = .5 * p.mass * speed * speed;
-    if (speed > 8.8) {
-      p.hits++; p.lastHit = clock; p.lastImpactKind = 'fall'; p.state = 'fall'; p.elevatedSurface = null;
+    terrainImpact(p, speed, surface.point);
+    if (p.dead || speed > 8.8) {
+      p.state = 'fall'; p.elevatedSurface = null;
       p.restTime = 0; p.supportBlock = null;
       p.velocity.x *= .6; p.velocity.z *= .6; p.velocity.y = -Math.min(7, speed * .24);
       p.angular.set(Math.cos(p.yaw) * 2.8, .3, -Math.sin(p.yaw) * 2.8);
       _contact.copy(surface.point); _impactVelocity.set(p.velocity.x, -speed, p.velocity.z);
-      impactBlood(p, _contact, _impactVelocity, energy, surface.point.y);
       if (window.NPCRagdoll) NPCRagdoll.create(p, G);
-      if (G.onPedestrianHit) G.onPedestrianHit(p, energy, { type: 'fall', position: surface.point, velocity: _impactVelocity });
     } else {
       p.velocity.set(0, 0, 0); p.angular.set(0, 0, 0); p.panicTime = speed > 5.3 ? 2 : 0;
       p.state = speed > 5.3 ? 'stagger' : 'wait'; p.staggerTime = .65; p.pauseTime = 1.4;
-      if (speed > 5.3) { p.hits++; p.lastHit = clock; p.lastImpactKind = 'fall'; if (G.onPedestrianHit) G.onPedestrianHit(p, energy, { type: 'fall', position: surface.point }); }
       p.route = placementRoute(p, surface.point); p.next = 1; p.direction = 1;
     }
     if (G.sound && speed > 3) G.sound('tap', Math.min(.8, speed / 24), p.position);
@@ -2576,8 +2938,8 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       const shapes = nearbySurfaces(p.position.x, p.position.z, feet - .04, _flightBefore.y + .92 * p.scale, .8 * p.scale);
       const surface = p.velocity.y <= 0 ? surfaceAt(shapes, p.position.x, p.position.z, feet - .025, beforeFeet + .035, .62) : null;
       if (surface) {
-        const supportSpeed = surface.body ? surface.body.velocity.y : 0;
-        landPerson(p, surface, Math.max(0, supportSpeed - p.velocity.y)); break;
+        if(surface.body)pointVelocity(surface.body,surface.point,_supportMotion);else _supportMotion.set(0,0,0);
+        landPerson(p, surface, Math.max(0, _supportMotion.sub(p.velocity).dot(surface.normal))); break;
       }
       // Side walls stop the upright falling capsule; they do not count as a floor.
       for (const shape of shapes) {
@@ -2610,6 +2972,12 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if (window.NPCRagdoll) NPCRagdoll.beginFrame(citizens);
     for (const p of citizens) {
       if (p.state === 'carried') continue;
+      // Death is permanent until city rebuild. Pose states describe movement,
+      // so an injured living doll and a dead doll can both be 'fall' or 'down'.
+      if (p.dead && p.state !== 'fall' && p.state !== 'down') {
+        if (p.talkPartner) endTalk(p);
+        p.state = 'fall'; p.elevatedSurface = null; p.restTime = 0;
+      }
       p.reverseCooldown -= dt;
       p.talkCooldown = Math.max(0, p.talkCooldown - dt);
       if (p.state === 'fall' || p.state === 'down') { updateFallen(p, dt); continue; }
@@ -2751,8 +3119,10 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       const yaw = Math.atan2(route[next].x - position.x, route[next].z - position.z);
       citizens.push({
         id: i, route: route, next: next, direction: direction, position: position,
-        quaternion: new T.Quaternion().setFromAxisAngle(UP, yaw), velocity: new T.Vector3(), angular: new T.Vector3(),
+        quaternion: new T.Quaternion().setFromAxisAngle(UP, yaw), velocity: new T.Vector3(), angular: new T.Vector3(), supportVelocity:new T.Vector3(),
         yaw: yaw, scale: scale, width: rnd(.92, 1.14), mass: rnd(45, 65),
+        hp: 100, maxHp: 100, health: 100, dead: false, totalDamage: 0,
+        lastDamage: 0, rawDamage: 0, lastDamageInfo: null, fatalDamage: null, deathTime: null, lastTerrainDamage: -5,
         speed: rnd(.73, 1.23), phase: random() * Math.PI * 2,
         shirt: choice(shirts), pants: choice(trousers), skin: choice(skins), hair: choice(hairColors), trim: choice(trousers),
         hairStyle: Math.floor(random() * 5), bag: random() < .37, skirt: random() < .22,
@@ -2803,9 +3173,12 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   }
   function stats() {
     let walking = 0, panicked = 0, down = 0, talking = 0, activeRagdolls = 0, crushed = 0, airborne = 0, attracted = 0;
+    let alive = 0, dead = 0, injured = 0, totalHealth = 0, minHealth = 100, maxHealth = 0;
     const spawnOrigins = { street: 0, interior: 0, rooftop: 0 }; let minMass = Infinity, maxMass = -Infinity;
     for (const p of citizens) {
       spawnOrigins[p.spawnOrigin || 'street']++; minMass = Math.min(minMass, p.mass); maxMass = Math.max(maxMass, p.mass);
+      totalHealth += p.hp; minHealth = Math.min(minHealth, p.hp); maxHealth = Math.max(maxHealth, p.hp);
+      if (p.dead) dead++; else { alive++; if (p.hp < p.maxHp) injured++; }
       if (p.state === 'carried') continue;
       if (p.state === 'fall' || p.state === 'down') down++;
       else if (p.state === 'panic' || p.state === 'stagger') panicked++;
@@ -2818,14 +3191,127 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     }
     return { walking: walking, panicked: panicked, talking: talking, down: down, activeRagdolls: activeRagdolls, total: citizens.length, bloodPools: bloodPools,
       bloodMarks: bloodPools + Math.max(0, bloodCursor - citizens.length), bloodCapacity: bloodCapacity, crushed: crushed, carried: carried ? 1 : 0,
-      airborne: airborne, attracted: attracted, spawnOrigins: spawnOrigins,
+      airborne: airborne, attracted: attracted, spawnOrigins: spawnOrigins, alive, dead, injured,
+      health: { min: citizens.length ? minHealth : 0, max: maxHealth, total: totalHealth, average: citizens.length ? totalHealth / citizens.length : 0, maxHp: 100 },
       massRange: { min: citizens.length ? minMass : 0, max: citizens.length ? maxMass : 0 },
       visualAssets: assetRenderer && assetRenderer.stats ? assetRenderer.stats() : null };
   }
-  window.People = { init: init, update: update, draw: drawPeople, alert: alert, collideBody: collideBody, collideRestingBody: collideRestingBody, attract: attract,
+  function forEachPerson(callback,includeJoints=false) {
+    if(typeof callback!=='function')return;
+    const vector=v=>Object.freeze({x:v.x,y:v.y,z:v.z}),scratch=new T.Vector3();
+    for(const p of citizens) {
+      let minX=Infinity,minY=Infinity,minZ=Infinity,maxX=-Infinity,maxY=-Infinity,maxZ=-Infinity;
+      const samples=p.ragdoll?p.ragdoll.collisionSamples:p.collider?p.collider.samples:collisionSamples;
+      const half=p.collider?.half,hx=half?half[0]:.39,hy=half?half[1]:.91,hz=half?half[2]:.30;
+      for(let i=0;i<samples.length;i++) {
+        const sample=samples[i];
+        const point=sample.position||scratch.set(0,sample.y*p.scale,0).applyQuaternion(p.quaternion).add(p.position);
+        let radius=sample.radius*(sample.position?1:p.scale);
+        if(p.ragdoll) {
+          // Collider balls are deliberately smaller than sleeves, skirts and
+          // hair. Visual bounds add a clothing envelope at the actual joints,
+          // never a standing-height box around a body lying on the pavement.
+          radius+=.04*p.scale;
+          if(i===0||i===13||i===14||i===17||i===18)radius=Math.max(radius,Math.max(hx,hz)*.98*p.scale);
+          if(i===21)radius=Math.max(radius,((p.collider?.samples?.[2]?.radius||.28)/.76+.03)*p.scale);
+        }
+        minX=Math.min(minX,point.x-radius);minY=Math.min(minY,point.y-radius);minZ=Math.min(minZ,point.z-radius);
+        maxX=Math.max(maxX,point.x+radius);maxY=Math.max(maxY,point.y+radius);maxZ=Math.max(maxZ,point.z+radius);
+      }
+      if(!p.ragdoll) {
+        // Use the imported model's full width and normalized crown/sole height,
+        // transformed by its real orientation. Small motion margins cover walk
+        // swing without changing any physics capsule or collision threshold.
+        for(let x=-1;x<=1;x+=2)for(let y=-1;y<=1;y+=2)for(let z=-1;z<=1;z+=2) {
+          scratch.set(x*(hx+.05),y*(hy+.04),z*(hz+.10)).multiplyScalar(p.scale).applyQuaternion(p.quaternion).add(p.position);
+          minX=Math.min(minX,scratch.x);minY=Math.min(minY,scratch.y);minZ=Math.min(minZ,scratch.z);
+          maxX=Math.max(maxX,scratch.x);maxY=Math.max(maxY,scratch.y);maxZ=Math.max(maxZ,scratch.z);
+        }
+      }
+      let joints=null;
+      if(includeJoints) {
+        const points=p.ragdoll?p.ragdoll.joints:p.collider?.captureJoints?p.collider.captureJoints(p):null;
+        if(points)joints=Object.freeze(points.map(vector));
+      }
+      callback(Object.freeze({id:p.id,hp:p.hp,maxHp:p.maxHp,dead:p.dead,state:p.state,mass:p.mass,scale:p.scale,
+        carried:p.state==='carried',ragdoll:!!p.ragdoll,position:vector(p.position),
+        bounds:Object.freeze({min:Object.freeze({x:minX,y:minY,z:minZ}),max:Object.freeze({x:maxX,y:maxY,z:maxZ})}),joints}));
+    }
+  }
+  window.People = { init: init, update: update, draw: drawPeople, alert: alert, collideBody: collideBody, collideRestingBody: collideRestingBody, occupiesBody: occupiesBody, attract: attract,
     pickUpRandom: pickUpRandom, findCarryTarget: findCarryTarget, pickUpTarget: pickUpTarget, placementSurface: placementSurface,
     moveCarried: moveCarried, canPlaceCarried: canPlaceCarried, placeCarried: placeCarried, cancelCarry: cancelCarry,
-    projectileSweep: projectileSweep, hitProjectile: hitProjectile, clearBlood: clearBlood, dispose: dispose, stats: stats };
+    projectileSweep: projectileSweep, hitProjectile: hitProjectile, terrainImpact: terrainImpact, clearBlood: clearBlood, dispose: dispose, stats: stats, forEachPerson: forEachPerson,
+    _queryMaterialParts:queryMaterialParts };
+})();
+
+</script>
+<script>
+/* src/people-xray.js — embedded offline */
+/* A single non-interactive overlay: no extra character meshes or depth passes. */
+window.PeopleXray = (() => {
+  const COLORS = { healthy: '#4dff91', injured: '#ffd84a', dead: '#ff5668' };
+  const EDGES = [[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]];
+
+  // Clip the eight bounds corners against the near plane before projecting.
+  // This also rejects people behind the camera instead of mirroring their boxes.
+  function projector() {
+    const corners = Array.from({length:8},()=>new THREE.Vector3());
+    const point = new THREE.Vector3(), screen = new THREE.Vector3();
+    return function project(bounds,camera,width,height,out) {
+      if(!bounds||width<=0||height<=0)return false;
+      const near = -camera.near * 1.001;
+      let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity,count=0,closest=Infinity;
+      const add = p => {
+        screen.copy(p).applyMatrix4(camera.projectionMatrix);
+        const x=(screen.x*.5+.5)*width,y=(.5-screen.y*.5)*height;
+        if(!Number.isFinite(x)||!Number.isFinite(y))return;
+        left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);count++;
+      };
+      for(let i=0;i<8;i++){
+        const p=corners[i].set(i&1?bounds.max.x:bounds.min.x,i&2?bounds.max.y:bounds.min.y,i&4?bounds.max.z:bounds.min.z).applyMatrix4(camera.matrixWorldInverse);
+        closest=Math.min(closest,-p.z);if(p.z<=near)add(p);
+      }
+      for(const [a,b] of EDGES){const p=corners[a],q=corners[b];if((p.z<=near)!==(q.z<=near)){point.copy(p).lerp(q,(near-p.z)/(q.z-p.z));add(point);}}
+      if(!count||closest>camera.far||right<0||left>width||bottom<0||top>height)return false;
+      const cx=(left+right)*.5,cy=(top+bottom)*.5,w=Math.max(8,right-left+5),h=Math.max(10,bottom-top+5);
+      out.x=Math.max(1,cx-w*.5);out.y=Math.max(1,cy-h*.5);
+      out.width=Math.min(width-1,cx+w*.5)-out.x;out.height=Math.min(height-1,cy+h*.5)-out.y;
+      return out.width>0&&out.height>0;
+    };
+  }
+
+  function create(people) {
+    const canvas=document.createElement('canvas');canvas.id='people-xray';canvas.setAttribute('aria-hidden','true');canvas.hidden=true;document.body.appendChild(canvas);
+    const ctx=canvas.getContext('2d'),project=projector(),snapshots=[],frames=[],counts={healthy:0,injured:0,dead:0};
+    let enabled=false,lastSample=-Infinity,width=0,height=0,ratio=0,drawn=0,visible=false;
+    function setEnabled(value){enabled=!!value;lastSample=-Infinity;if(!enabled){canvas.hidden=true;visible=false;drawn=0;counts.healthy=counts.injured=counts.dead=0;snapshots.length=0;}}
+    function update(camera,time=performance.now(),active=true){
+      if(!enabled||!active||!ctx){if(visible)canvas.hidden=true;visible=false;drawn=0;counts.healthy=counts.injured=counts.dead=0;return;}
+      const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,1.5);
+      if(w!==width||h!==height||dpr!==ratio){width=w;height=h;ratio=dpr;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+      canvas.hidden=false;visible=true;ctx.clearRect(0,0,width,height);
+      // Pose bounds refresh at 30 Hz; camera projection follows every rendered frame.
+      if(time-lastSample>=1000/30||time<lastSample){snapshots.length=0;people.forEachPerson(p=>snapshots.push(p));lastSample=time;}
+      camera.updateMatrixWorld();drawn=0;counts.healthy=counts.injured=counts.dead=0;
+      for(const p of snapshots){
+        const frame=frames[drawn]||(frames[drawn]={});if(!project(p.bounds,camera,width,height,frame))continue;
+        frame.id=p.id;frame.hp=Math.max(0,p.hp);frame.maxHp=p.maxHp||100;frame.status=p.dead||p.hp<=0?'dead':p.hp<frame.maxHp?'injured':'healthy';
+        counts[frame.status]++;drawn++;
+      }
+      ctx.lineJoin='round';ctx.beginPath();for(let i=0;i<drawn;i++){const f=frames[i];ctx.rect(f.x,f.y,f.width,f.height);}
+      ctx.strokeStyle='rgba(9,27,34,.85)';ctx.lineWidth=4.5;ctx.stroke();
+      for(const status of ['healthy','injured','dead']){
+        ctx.beginPath();for(let i=0;i<drawn;i++){const f=frames[i];if(f.status===status)ctx.rect(f.x,f.y,f.width,f.height);}
+        ctx.strokeStyle=COLORS[status];ctx.lineWidth=2;ctx.stroke();
+      }
+      // Close targets also get a compact health meter; distant crowds keep just frames.
+      for(let i=0;i<drawn;i++){const f=frames[i];if(f.width<18||f.height<18)continue;ctx.fillStyle='rgba(9,27,34,.9)';ctx.fillRect(f.x,f.y+f.height+3,f.width,4);ctx.fillStyle=COLORS[f.status];ctx.fillRect(f.x+1,f.y+f.height+4,(f.width-2)*Math.min(1,f.hp/f.maxHp),2);}
+    }
+    function stats(){return{enabled,visible,drawn,...counts,frames:frames.slice(0,drawn).map(f=>({...f}))};}
+    return{setEnabled,update,stats};
+  }
+  return{create,projector,colors:COLORS};
 })();
 
 </script>
@@ -2839,7 +3325,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   function text(id,value){const key=id+':text',string=String(value);if(hudValues[key]===string)return;hudValues[key]=string;$(id).textContent=string;}
   function flag(id,name,value){const key=id+':'+name,valueBool=!!value;if(hudValues[key]===valueBool)return;hudValues[key]=valueBool;$(id).classList.toggle(name,valueBool);}
   function scale(id,value){const key=id+':scale';if(hudValues[key]===value)return;hudValues[key]=value;$(id).style.transform='scaleX('+value+')';}
-  const defaults={mode:'sandbox',district:'mixed',density:3,pedestrians:250,populationVersion:1,seed:'DENSE-CITY-2026',quality:'high',adaptiveQuality:true,volume:65,shake:45,controlsVersion:3};
+  const defaults={mode:'sandbox',district:'mixed',density:3,pedestrians:250,populationVersion:1,seed:'DENSE-CITY-2026',quality:'high',adaptiveQuality:true,autoClearDebris:true,debrisTargetFps:45,volume:65,shake:45,controlsVersion:3};
   const defaultKeys={up:'KeyW',down:'KeyS',left:'KeyA',right:'KeyD',rise:'KeyE',fall:'KeyQ',sprint:'ShiftLeft',prev:'KeyZ',next:'KeyX',rebuild:'KeyR'};
   const actionNames={up:'向前',down:'向後',left:'向左',right:'向右',rise:'上升',fall:'下降',sprint:'加速',prev:'上個物品',next:'下個物品',rebuild:'重建街區'};
   const districtNames={mixed:'混合街區',residential:'住宅區',downtown:'市中心',towers:'高樓區'};
@@ -2864,11 +3350,11 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     {name:'小石頭',size:'0.7 m',mass:'2 kg',effect:'精準穿透'},
     {name:'磚塊',size:'1.5 m',mass:'8 kg',effect:'打碎薄牆'},
     {name:'保齡球',size:'1.9 m',mass:'22 kg',effect:'滾動撞擊'},
-    {name:'鐵球',size:'2.6 m',mass:'110 kg',effect:'重擊支柱'},
-    {name:'油桶',size:'2.9 m',mass:'70 kg',effect:'延遲爆炸'},
-    {name:'鋼琴',size:'5.3 m',mass:'420 kg',effect:'翻滾重壓'},
-    {name:'小汽車',size:'5.6 m',mass:'900 kg',effect:'廣域撞擊'},
-    {name:'混凝土方塊',size:'7.4 m',mass:'4,200 kg',effect:'巨型壓垮'},
+    {name:'鐵球',size:'2.6 m',mass:'600 kg',effect:'重擊支柱'},
+    {name:'油桶',size:'2.9 m',mass:'180 kg',effect:'延遲爆炸'},
+    {name:'鋼琴',size:'5.3 m',mass:'480 kg',effect:'翻滾重壓'},
+    {name:'小汽車',size:'5.6 m',mass:'1,500 kg',effect:'廣域撞擊'},
+    {name:'混凝土方塊',size:'7.4 m',mass:'6,500 kg',effect:'巨型壓垮'},
     {name:'隕石',size:'12 m',mass:'12,000 kg',effect:'天體衝擊'},
     {name:'核彈',size:'6 m',mass:'2,200 kg',effect:'巨大爆炸'},
     {name:'手榴彈',size:'0.7 m',mass:'1 kg',effect:'延遲爆破'},
@@ -2883,6 +3369,9 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     options.district=Object.hasOwn(districtNames,options.district)?options.district:'mixed';
     options.quality=['low','medium','high'].includes(options.quality)?options.quality:'high';
     options.adaptiveQuality=options.adaptiveQuality!==false;
+    options.autoClearDebris=options.autoClearDebris!==false;
+    const target=Number(options.debrisTargetFps);
+    options.debrisTargetFps=Number.isFinite(target)?Math.max(30,Math.min(60,Math.round(target))):45;
     options.density=Math.max(1,Math.min(3,Math.round(Number(options.density)||3)));
     options.pedestrians=Math.max(0,Math.min(250,Math.round(Number(options.pedestrians)||0)));
     options.volume=Math.max(0,Math.min(100,Number(options.volume)||0));
@@ -2894,7 +3383,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   function syncFields(){
     normalize();
     document.querySelectorAll('[data-opt]').forEach(el=>{if(el.type==='checkbox')el.checked=options[el.dataset.opt];else el.value=options[el.dataset.opt];});
-    document.querySelectorAll('[data-readout]').forEach(el=>{el.textContent=options[el.dataset.readout]+'%';});
+    document.querySelectorAll('[data-readout]').forEach(el=>{el.textContent=options[el.dataset.readout]+(el.dataset.readout==='debrisTargetFps'?' FPS':'%');});
     document.querySelectorAll('[data-mode]').forEach(el=>{const isSelected=el.dataset.mode===options.mode;el.classList.toggle('selected',isSelected);el.setAttribute('aria-pressed',String(isSelected));});
     $('district-label').textContent=districtNames[options.district];
     $('seed-label').textContent=options.seed;
@@ -2923,13 +3412,14 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if(seconds<=0)return;text('gravity-seconds',seconds.toFixed(1));scale('gravity-progress',Math.min(1,seconds/5));
     text('gravity-affected',affected>0?'牽引 '+Math.round(affected)+' 個物件・結束後自由墜落':'正在牽引建材與路人・結束後自由墜落');
   }
+  function setXray(enabled){flag('xray-legend','hidden',!enabled);flag('hud-xray','active',enabled);$('hud-xray').setAttribute('aria-pressed',String(!!enabled));}
   function setHand(active,carrying){
     flag('hand-banner','hidden',!active);flag('hud-hand','active',active);
     if(hudValues.handActive===active&&hudValues.handCarrying===carrying)return;
     hudValues.handActive=active;hudValues.handCarrying=carrying;$('hud-hand').setAttribute('aria-pressed',String(active));
     if(!active){setSelected(selected);return}
     text('selected-name','搬運之手');text('selected-type','安全搬運');text('selected-size','不造成傷害');text('selected-mass','不計次');
-    const help=carrying?'瞄準屋頂或積木的綠色標記，左鍵安全放下':'準星瞄準路人，左鍵抓取';text('hand-help',help);text('weapon-help',help+'；H 取消並送回原處。');text('left-action-hint',carrying?'安全放下':'瞄準抓取');
+    const help=carrying?'瞄準屋頂或積木的綠色標記，左鍵安全放下':'瞄準健康或受傷路人，左鍵抓取';text('hand-help',help);text('weapon-help',help+'；H 取消並送回原處。');text('left-action-hint',carrying?'安全放下':'瞄準抓取');
     [...$('hotbar').children].forEach(el=>{el.classList.remove('selected');el.setAttribute('aria-pressed','false')});
   }
   function setPlaying(value){
@@ -2997,7 +3487,8 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     if(state.fps!==undefined)text('fps-value',Math.round(state.fps));
     if(state.activeBodies!==undefined)text('body-value',state.activeBodies+' 活動 · '+(state.sleepingBodies||0)+' 休眠');
     if(state.observer!==undefined)setObserver(state.observer);
-    if(state.pedestrians!==undefined){const people=state.pedestrians;if(people&&typeof people==='object'){text('citizen-total',Number(people.total)||0);text('citizen-panic',Number(people.panicked)||0);text('citizen-down',Number(people.down)||0);text('citizen-crushed',Number(people.crushed)||0);}else text('citizen-total',Number(people)||0);}
+    if(state.pedestrians!==undefined){const people=state.pedestrians;if(people&&typeof people==='object'){text('citizen-total',Number(people.total)||0);text('citizen-panic',Number(people.panicked)||0);text('citizen-down',Number(people.down)||0);text('citizen-crushed',Number(people.crushed)||0);text('citizen-alive',Number(people.alive)||0);text('citizen-dead',Number(people.dead)||0);text('citizen-injured',Number(people.injured)||0);}else text('citizen-total',Number(people)||0);}
+    if(state.cleanup){const c=state.cleanup,target=c.targetFps||c.target||45;flag('cleanup-status','working',c.cleaning);text('cleanup-status',!c.enabled?'自動清理已關閉':c.exhausted?`低於 ${target} FPS · 等待地面殘骸落穩`:c.cleaning?`目標 ${target} FPS · 清理中`:c.cleanedBodies?`目標 ${target} FPS · 已整理 ${c.cleanedBodies} 塊殘骸`:`低於 ${target} FPS 自動整理殘骸`);}
     if(state.combo!==undefined){const chain=Number(state.combo)||0;flag('combo','hidden',chain<2);if(chain>=2)text('combo-value','連鎖 ×'+chain);}
     if(state.aimText!==undefined)text('aim-text',state.aimText||'');
     if(state.locked!==undefined)setLocked(state.locked);
@@ -3018,7 +3509,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
       options.controlsVersion=3;
     }}catch(e){}
     normalize();save();syncFields();
-    document.querySelectorAll('[data-opt]').forEach(el=>{const handle=()=>{const key=el.dataset.opt;options[key]=el.type==='checkbox'?el.checked:['density','pedestrians','volume','shake'].includes(key)?Number(el.value):el.value;document.querySelectorAll('[data-opt="'+key+'"]').forEach(other=>{if(other!==el){if(other.type==='checkbox')other.checked=el.checked;else other.value=el.value;}});document.querySelectorAll('[data-readout="'+key+'"]').forEach(readout=>readout.textContent=el.value+'%');if(key==='volume'||key==='shake'||key==='adaptiveQuality')invoke('apply',getOptions());save();};el.addEventListener(el.type==='range'?'input':'change',handle);});
+    document.querySelectorAll('[data-opt]').forEach(el=>{const handle=()=>{const key=el.dataset.opt;options[key]=el.type==='checkbox'?el.checked:['density','pedestrians','volume','shake','debrisTargetFps'].includes(key)?Number(el.value):el.value;document.querySelectorAll('[data-opt="'+key+'"]').forEach(other=>{if(other!==el){if(other.type==='checkbox')other.checked=el.checked;else other.value=el.value;}});document.querySelectorAll('[data-readout="'+key+'"]').forEach(readout=>readout.textContent=el.value+(key==='debrisTargetFps'?' FPS':'%'));if(['volume','shake','adaptiveQuality','autoClearDebris','debrisTargetFps'].includes(key))invoke('apply',getOptions());save();};el.addEventListener(el.type==='range'?'input':'change',handle);});
     document.querySelectorAll('[data-mode]').forEach(el=>el.addEventListener('click',()=>{options.mode=el.dataset.mode;syncFields();save();}));
     $('menu-seed').addEventListener('click',()=>{options.seed=newSeed();syncFields();save();});
     $('start-game').addEventListener('click',()=>{save();invoke('start',getOptions());});
@@ -3029,6 +3520,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
     $('hud-randomize').addEventListener('click',()=>{options.seed=newSeed();syncFields();save();invoke('randomize',getOptions());});
     $('hud-clear').addEventListener('click',()=>invoke('clear'));
     $('hud-hand').addEventListener('click',()=>invoke('hand'));
+    $('hud-xray').addEventListener('click',()=>invoke('xray'));
     $('hud-observe').addEventListener('click',()=>invoke('observe'));
     $('hud-menu').addEventListener('click',()=>invoke('menu'));
     $('settings-close').addEventListener('click',closeSettings);
@@ -3047,7 +3539,7 @@ window.NPC_GARMENT_DATA={"3d+character+model.glb":{"skirt":false,"longSkirt":fal
   }
   function setOptions(next){if(next&&typeof next==='object'){options={...options,...next,keys:{...options.keys,...next.keys}};normalize();syncFields();save();}}
   function showError(message){$('boot-error').textContent=String(message);$('boot-error').classList.remove('hidden');}
-  window.UI={setHand,setGravityWell,init,getOptions,setOptions,setPlaying,setPaused,setLocked,setCursorVisible,update,toast,showSettings,showResults,hideResults,setSelected,captureKey,showError,items,defaultKeys,keyLabel,isPaused:()=>paused,isPlaying:()=>playing,isBinding:()=>!!binding};
+  window.UI={setHand,setXray,setGravityWell,init,getOptions,setOptions,setPlaying,setPaused,setLocked,setCursorVisible,update,toast,showSettings,showResults,hideResults,setSelected,captureKey,showError,items,defaultKeys,keyLabel,isPaused:()=>paused,isPlaying:()=>playing,isBinding:()=>!!binding};
 })();
 
 
@@ -3110,7 +3602,13 @@ window.Fracture = (() => {
       for(let i=1;i<n;i++){if(sorted[i].p[axis]-sorted[i-1].p[axis]<.04)continue;const cost=left[i-1]+right[i]+group.volume*.012*Math.abs(n-i*2)/n;if(cost<bestCost){bestCost=cost;best={nodes:sorted,index:i,gain:group.volume-left[i-1]-right[i]}}}
     }if(!best){const nodes=group.nodes.slice().sort((a,b)=>a.index-b.index);best={nodes,index:Math.ceil(nodes.length/2),gain:0}}return {groups:[groupBounds(best.nodes.slice(0,best.index)),groupBounds(best.nodes.slice(best.index))],gain:best.gain};
   }
-  function buildShapes(parts,center=ZERO,options={}){const budget=Math.max(8,Math.min(BUDGET,Number.isFinite(options.maxShapes)?Math.floor(options.maxShapes):BUDGET));if(!parts.length)return [];if(parts.length<=budget)return parts.map(p=>{const k=p.block,q=p.rotation||{x:0,y:0,z:0,w:1},shape=new CANNON.Box(new CANNON.Vec3(k.sx*.5,k.sy*.5,k.sz*.5));shape.block=k;return {shape,offset:new CANNON.Vec3(p.local.x-center.x,p.local.y-center.y,p.local.z-center.z),quaternion:new CANNON.Quaternion(q.x,q.y,q.z,q.w)}});
+  function tagMaterials(shape,blocks){
+    // A merged physics proxy still identifies its original support tiles and
+    // local impact mass. NPC damage must not use an entire tower's mass.
+    shape.materialBlocks=new Set(blocks);shape.materialMass=0;
+    for(const block of shape.materialBlocks)shape.materialMass=Math.max(shape.materialMass,massOf(block));
+  }
+  function buildShapes(parts,center=ZERO,options={}){const budget=Math.max(8,Math.min(BUDGET,Number.isFinite(options.maxShapes)?Math.floor(options.maxShapes):BUDGET));if(!parts.length)return [];if(parts.length<=budget)return parts.map(p=>{const k=p.block,q=p.rotation||{x:0,y:0,z:0,w:1},shape=new CANNON.Box(new CANNON.Vec3(k.sx*.5,k.sy*.5,k.sz*.5));shape.block=k;tagMaterials(shape,[k]);return {shape,offset:new CANNON.Vec3(p.local.x-center.x,p.local.y-center.y,p.local.z-center.z),quaternion:new CANNON.Quaternion(q.x,q.y,q.z,q.w)}});
     // Preserve a shared orientation (standing lean or an already rotated group)
     // before proxy construction, rather than growing boxes around tilted walls.
     const first=parts[0].rotation||new THREE.Quaternion(),common=new THREE.Quaternion(first.x,first.y,first.z,first.w),same=parts.every(p=>{const q=p.rotation||{x:0,y:0,z:0,w:1};return Math.abs(common.x*q.x+common.y*q.y+common.z*q.z+common.w*q.w)>.99999}),rotation=same?common:new THREE.Quaternion(),inverse=rotation.clone().invert(),buckets=new Map();
@@ -3126,7 +3624,7 @@ window.Fracture = (() => {
     for(let i=0;i<groups.length&&groups.length<budget;i++){const g=groups[i],d=g.max.clone().sub(g.min);if(d.y<=1.8||d.x<span.x*.58||d.z<span.z*.58)continue;const axis=d.x>d.z?'x':'z',mid=(g.min[axis]+g.max[axis])*.5,left=g.nodes.filter(a=>a.p[axis]<mid),right=g.nodes.filter(a=>a.p[axis]>=mid);if(!left.length||!right.length)continue;groups.splice(i,1,groupBounds(left),groupBounds(right));i--}
     for(const g of groups)g.split=splitProxy(g);
     while(groups.length<budget){let selected=-1,score=-Infinity;for(let i=0;i<groups.length;i++){const g=groups[i];if(!g.split)continue;const s=g.split.gain+g.error*.16+Math.cbrt(g.volume)*g.nodes.length*.03;if(s>score){score=s;selected=i}}if(selected<0)break;const split=groups[selected].split.groups;for(const g of split)g.split=splitProxy(g);groups.splice(selected,1,...split)}
-    return groups.map(g=>{const half=g.max.clone().sub(g.min).multiplyScalar(.5),position=g.min.clone().add(g.max).multiplyScalar(.5).applyQuaternion(rotation),shape=new CANNON.Box(new CANNON.Vec3(Math.max(.015,half.x),Math.max(.015,half.y),Math.max(.015,half.z)));if(g.nodes.length===1)shape.block=g.nodes[0].part.block;return {shape,offset:new CANNON.Vec3(position.x-center.x,position.y-center.y,position.z-center.z),quaternion:new CANNON.Quaternion(rotation.x,rotation.y,rotation.z,rotation.w)}});
+    return groups.map(g=>{const half=g.max.clone().sub(g.min).multiplyScalar(.5),position=g.min.clone().add(g.max).multiplyScalar(.5).applyQuaternion(rotation),shape=new CANNON.Box(new CANNON.Vec3(Math.max(.015,half.x),Math.max(.015,half.y),Math.max(.015,half.z)));if(g.nodes.length===1)shape.block=g.nodes[0].part.block;tagMaterials(shape,g.nodes.map(n=>n.part.block));return {shape,offset:new CANNON.Vec3(position.x-center.x,position.y-center.y,position.z-center.z),quaternion:new CANNON.Quaternion(rotation.x,rotation.y,rotation.z,rotation.w)}});
   }
   return {partition,buildShapes,describe};
 })();
@@ -3409,21 +3907,39 @@ window.Physics = (() => {
     const body={id:++serial,rb,position:options.position.clone(),oldPosition:options.position.clone(),quaternion:new THREE.Quaternion().copy(rb.quaternion),oldQuaternion:new THREE.Quaternion().copy(rb.quaternion),velocity:tv(rb.velocity),preVelocity:tv(rb.velocity),preAngular:options.angular?options.angular.clone():new THREE.Vector3(),half:options.half.clone(),mass:options.mass,type:options.type||'debris',parts:options.parts||[],mesh:options.mesh||null,item:options.item??-1,age:0,sleeping:false,lastDamage:0,fuse:-1,important:options.important||false,splitDepth:options.splitDepth||0};
     rb.gameBody=body;world.addBody(rb);G.bodies.push(body);if(body.mesh)G.scene.add(body.mesh);if(options.angular)rb.angularVelocity.copy(cv(options.angular));return body;
   }
-  function looseBlock(k,impulse,impactPoint){if(!markDetached(k))return null;const p=new THREE.Vector3(k.x,k.y,k.z),m=blockMass(k),v=impulse.clone().multiplyScalar(1/Math.max(m,12));if(v.length()>24)v.setLength(24);v.y+=1;
-    const body=createBody({position:p,half:new THREE.Vector3(k.sx/2,k.sy/2,k.sz/2),mass:m,velocity:v,quaternion:k.quaternion,parts:[{block:k,local:new THREE.Vector3()}],angular:new THREE.Vector3((G.rng()-.5)*4,(G.rng()-.5)*4,(G.rng()-.5)*4)});k.body=body;return body;
+  function looseBlock(k,impulse,impactPoint){if(!markDetached(k))return null;const p=new THREE.Vector3(k.x,k.y,k.z),m=blockMass(k),v=impulse.clone().multiplyScalar(1/m);if(v.length()>24)v.setLength(24);
+    const spin=Math.min(1,v.length()*.3),body=createBody({position:p,half:new THREE.Vector3(k.sx/2,k.sy/2,k.sz/2),mass:m,velocity:v,quaternion:k.quaternion,parts:[{block:k,local:new THREE.Vector3()}],angular:new THREE.Vector3((G.rng()-.5)*spin,(G.rng()-.5)*spin,(G.rng()-.5)*spin)});k.body=body;return body;
   }
   function activityBudget(){return G.options.quality==='low'?85:G.options.quality==='medium'?130:180}
   function compound(parts,options={}){const info=Fracture.describe(parts),localParts=parts.map(p=>({...p,local:p.local.clone().sub(info.center)})),q=options.quaternion||new THREE.Quaternion(),position=info.center.clone().applyQuaternion(q).add(options.origin||new THREE.Vector3());const body=createBody({...options,position,quaternion:q,half:info.half,mass:info.mass,parts:localParts,shapes:Fracture.buildShapes(localParts,new THREE.Vector3(),{maxShapes:localParts.length>500?28:localParts.length>100?16:10}),type:options.type||'chunk',important:true});for(const p of localParts)p.block.body=body;return body}
   function worldParts(list){return list.map(k=>({block:k,local:new THREE.Vector3(k.x,k.y,k.z),rotation:k.quaternion.clone()}))}
-  function blastFragments(list,point,energy=50000,impactVelocity=null){const parts=worldParts(list),room=Math.max(1,activityBudget()-G.bodies.filter(b=>!b.removed&&!b.sleeping).length),groups=Fracture.partition(parts,{point,energy,mass:parts.reduce((s,p)=>s+blockMass(p.block),0),mode:'blast',maxGroups:Math.min(12,room)});for(const group of groups){const center=Fracture.describe(group).center,v=center.clone().sub(point);v.y=Math.max(2,v.y*.4);v.normalize().multiplyScalar(Math.min(14,4+Math.sqrt(energy/Math.max(1,group.reduce((s,p)=>s+blockMass(p.block),0)))*.2));if(impactVelocity){v.multiplyScalar(.07).addScaledVector(impactVelocity,Math.min(.3,4/Math.max(1,impactVelocity.length())))}compound(group,{velocity:v,angular:new THREE.Vector3(v.z*.045,.08,-v.x*.045)})}}
-  function damage(point,energy,velocity,source,hitBlock,forceRadius){if(energy<30)return 0;const massive=source&&source.mass>200;let radius=forceRadius??(massive?Math.min(7,.7+Math.cbrt(energy)*.09):Math.min(2.2,.28+Math.sqrt(energy)*.014));
+  function blastFragments(list,point,energy=50000,impactVelocity=null){const parts=worldParts(list),mass=parts.reduce((s,p)=>s+blockMass(p.block),0),room=Math.max(1,activityBudget()-G.bodies.filter(b=>!b.removed&&!b.sleeping).length),groups=Fracture.partition(parts,{point,energy,mass,mode:'blast',maxGroups:Math.min(12,room)});
+    // Separation itself supplies no launch energy. Explosions apply one finite
+    // impulse afterwards; contact fragments share a small part of the impact.
+    const v=new THREE.Vector3();if(impactVelocity?.lengthSq())v.copy(impactVelocity).setLength(Math.min(impactVelocity.length()*.18,Math.sqrt(2*energy*.04/Math.max(1,mass))));
+    for(const group of groups)compound(group,{velocity:v,angular:new THREE.Vector3(v.z*.025,0,-v.x*.025)});
+  }
+  function damage(point,energy,velocity,source,hitBlock,forceRadius){if(energy<30)return 0;const massive=source&&source.mass>200,blast=!!source?.exploded;
+    // Physical impacts act around the contacted material, never as a second
+    // spherical explosion whose radius grows with an entire tower's mass.
+    const footprint=source?.parts?.length?(hitBlock?Math.min(hitBlock.sx,hitBlock.sz):1):source?.half?Math.min(source.half.x,source.half.z):0;
+    let radius=forceRadius??(massive?Math.min(2.8,.65+footprint*.8+Math.cbrt(energy)*.004):Math.min(2.2,.28+Math.sqrt(energy)*.014));
     const range=new THREE.Vector3(radius,radius,radius),blocks=query(point.clone().sub(range),point.clone().add(range));if(hitBlock&&hitBlock.alive)blocks.add(hitBlock);let count=0;
     const impulse=velocity.clone().normalize().multiplyScalar(Math.min(1400,Math.sqrt(energy)*12)),bulk=radius>2||G.bodies.filter(b=>!b.removed&&!b.sleeping).length>activityBudget()-12?new Map():null;
+    const candidates=[];let totalWeight=0;
     for(const k of blocks){const local=point.clone().sub(new THREE.Vector3(k.x,k.y,k.z));if(k.quaternion)local.applyQuaternion(k.quaternion.clone().invert());const dx=Math.max(0,Math.abs(local.x)-k.sx/2),dy=Math.max(0,Math.abs(local.y)-k.sy/2),dz=Math.max(0,Math.abs(local.z)-k.sz/2),d=Math.sqrt(dx*dx+dy*dy+dz*dz);if(d>radius)continue;
-      const fall=Math.max(.12,1-d/(radius+.001)),amount=Math.sqrt(energy)*fall*(source?.item>=0?Toy.items[source.item].damage:1)*.52;
+      if(!blast&&source&&hitBlock&&k.b!==hitBlock.b)continue;
+      let fall=Math.max(0,1-d/(radius+.001))**2;
+      if(blast&&d>.3){const target=new THREE.Vector3(k.x,k.y,k.z),shield=sweep(point,target,new THREE.Vector3());if(shield&&shield.block!==k&&shield.t<.98)fall*=.18;}
+      candidates.push({k,fall});totalWeight+=fall;
+    }
+    // Bound each event's total damage; a dense grid must not multiply one
+    // impact's energy by every wall, beam and floor inside the query.
+    const share=Math.min(1,(blast?12:3)/Math.max(.001,totalWeight));
+    for(const {k,fall}of candidates){const amount=Math.sqrt(energy)*fall*share*(source?.item>=0?Toy.items[source.item].damage:1)*.52;
       k.hp-=amount;hurtBuildings.add(k.b);if(k.hp<=0){if(bulk){if(markDetached(k)){const id=k.b.id;if(!bulk.has(id))bulk.set(id,[]);bulk.get(id).push(k)}}else looseBlock(k,impulse.clone().multiplyScalar(fall),point);count++}else G.tintBlock(k);
     }
-    if(bulk)for(const list of bulk.values())blastFragments(list,point,energy,forceRadius>2?null:velocity);
+    if(bulk)for(const list of bulk.values())blastFragments(list,point,energy,blast||!source?null:velocity);
     if(count){G.lastImpact=G.elapsed;G.combo=Math.min(99,G.combo+count);G.score+=Math.floor(count*Math.min(G.combo,20)*1.4);G.fx(point,Math.min(28,count*2),massive?'heavy':'brick');G.sound(massive?'heavy':'break',Math.min(1,energy/25000),point);G.shake=Math.min(.9,G.shake+.06+Math.sqrt(energy)*.0006);People.alert(point,Math.min(35,radius*4+12))}
     return count;
   }
@@ -3538,19 +4054,30 @@ window.Physics = (() => {
     People.alert(hit.point,14);if(hit.kind!=='air'&&hit.kind!=='person')G.fx(hit.point,3,'brick');return hit;
   }
   function impactExplosive(b){return b.item>=0&&['meteor','nuke','rpg','airstrike'].includes(Toy.items[b.item]?.shape)}
-  function blastDistance(body,point){const local=point.clone().sub(body.position).applyQuaternion(body.quaternion.clone().invert()),delta=new THREE.Vector3(),inverse=new THREE.Quaternion();let nearest=Infinity;
+  function blastDistance(body,point,contactPoint){const local=point.clone().sub(body.position).applyQuaternion(body.quaternion.clone().invert()),delta=new THREE.Vector3(),inverse=new THREE.Quaternion();let nearest=Infinity;
     // A tall connected fragment may have its centre many floors above the
     // impact. Test the material itself, including holes and part rotations.
-    if(body.parts.length){for(const part of body.parts){const k=part.block;delta.copy(local).sub(part.local);if(part.rotation)delta.applyQuaternion(inverse.copy(part.rotation).invert());const dx=Math.max(0,Math.abs(delta.x)-k.sx/2),dy=Math.max(0,Math.abs(delta.y)-k.sy/2),dz=Math.max(0,Math.abs(delta.z)-k.sz/2);nearest=Math.min(nearest,Math.hypot(dx,dy,dz));if(nearest===0)break}}
-    else for(let i=0;i<body.rb.shapes.length;i++){const shape=body.rb.shapes[i];delta.copy(local).sub(body.rb.shapeOffsets[i]).applyQuaternion(inverse.copy(body.rb.shapeOrientations[i]).invert());const h=shape.halfExtents;nearest=Math.min(nearest,h?Math.hypot(Math.max(0,Math.abs(delta.x)-h.x),Math.max(0,Math.abs(delta.y)-h.y),Math.max(0,Math.abs(delta.z)-h.z)):Math.max(0,delta.length()-(shape.radius??shape.boundingSphereRadius)))}return nearest;
+    if(body.parts.length){for(const part of body.parts){const k=part.block;delta.copy(local).sub(part.local);if(part.rotation)delta.applyQuaternion(inverse.copy(part.rotation).invert());const dx=Math.max(0,Math.abs(delta.x)-k.sx/2),dy=Math.max(0,Math.abs(delta.y)-k.sy/2),dz=Math.max(0,Math.abs(delta.z)-k.sz/2),distance=Math.hypot(dx,dy,dz);if(distance<nearest){nearest=distance;if(contactPoint){contactPoint.set(Math.max(-k.sx/2,Math.min(k.sx/2,delta.x)),Math.max(-k.sy/2,Math.min(k.sy/2,delta.y)),Math.max(-k.sz/2,Math.min(k.sz/2,delta.z)));if(part.rotation)contactPoint.applyQuaternion(part.rotation);contactPoint.add(part.local)}}if(nearest===0)break}}
+    else for(let i=0;i<body.rb.shapes.length;i++){const shape=body.rb.shapes[i],rotation=body.rb.shapeOrientations[i];delta.copy(local).sub(body.rb.shapeOffsets[i]).applyQuaternion(inverse.copy(rotation).invert());const h=shape.halfExtents,r=shape.radius??shape.boundingSphereRadius,distance=h?Math.hypot(Math.max(0,Math.abs(delta.x)-h.x),Math.max(0,Math.abs(delta.y)-h.y),Math.max(0,Math.abs(delta.z)-h.z)):Math.max(0,delta.length()-r);if(distance<nearest){nearest=distance;if(contactPoint){if(h)contactPoint.set(Math.max(-h.x,Math.min(h.x,delta.x)),Math.max(-h.y,Math.min(h.y,delta.y)),Math.max(-h.z,Math.min(h.z,delta.z)));else contactPoint.copy(delta).clampLength(0,r);contactPoint.applyQuaternion(rotation).add(body.rb.shapeOffsets[i])}}}
+    if(contactPoint)contactPoint.applyQuaternion(body.quaternion).add(body.position);return nearest;
   }
-  function explode(body){if(body.exploded||body.removed)return;const item=Toy.items[body.item],p=body.position.clone(),radius=item?.blastRadius||8.5,energy=item?.blastEnergy||65000,existing=new Set(G.bodies);body.exploded=true;damage(p,energy,new THREE.Vector3(0,15,0),body,null,radius);
-    for(const other of G.bodies){if(other===body||other.removed)continue;readBodyState(other);const d=other.position.clone().sub(p);if(d.length()>other.half.length()+radius*1.35)continue;const l=blastDistance(other,p);if(l<radius*1.35){d.y+=2;d.normalize().multiplyScalar((1-l/(radius*1.35))*Math.min(other.mass*22,35000));other.rb.applyImpulse(cv(d),cv(p));other.rb.wakeUp();other.sleeping=false;
-        const strength=energy*Math.max(0,1-l/radius)**2;if(existing.has(other)&&other.parts.length>=2&&strength>200){const pending=fractureQueue.get(other);if(!pending?.blast||pending.energy<strength)fractureQueue.set(other,{split:other,energy:strength,blast:true,localPoint:p.clone().sub(other.position).applyQuaternion(other.quaternion.clone().invert())})}
-      }}
+  function explode(body){if(body.exploded||body.removed)return;const item=Toy.items[body.item],p=body.position.clone(),radius=item?.blastRadius||5,energy=item?.blastEnergy||65000,existing=new Set(G.bodies);body.exploded=true;damage(p,energy,new THREE.Vector3(),body,body.impactBlock,radius);
+    // Newton-seconds are set by the blast, not multiplied by body mass.
+    // Cannon then gives a one-ton block a far smaller delta-v than a person.
+    const impulseAt=(distance,target)=>{const shield=target&&sweep(p,target,new THREE.Vector3());return Math.sqrt(energy)*7*Math.max(0,1-distance/radius)**2*(shield&&shield.t<.98?.18:1)},kicks=[];let launchEnergy=0;
+    for(const other of G.bodies){if(other===body||other.removed)continue;readBodyState(other);if(other.position.distanceTo(p)>other.half.length()+radius)continue;const contact=new THREE.Vector3(),l=blastDistance(other,p,contact);if(l>=radius)continue;
+      const d=contact.clone().sub(p);if(d.lengthSq()<.00001)d.copy(other.position).sub(p);if(d.lengthSq()<.00001)d.set(0,1,0);
+      const impulse=impulseAt(l,contact);
+      d.normalize().multiplyScalar(impulse);const torque=contact.clone().sub(other.position).cross(d).applyQuaternion(other.quaternion.clone().invert()),inv=other.rb.invInertia;
+      launchEnergy+=d.lengthSq()/(2*other.mass)+.5*(torque.x*torque.x*inv.x+torque.y*torque.y*inv.y+torque.z*torque.z*inv.z);kicks.push({other,d,contact});
+      const strength=impulse*Math.sqrt(energy)/7;if(existing.has(other)&&other.parts.length>=2&&strength>200){const pending=fractureQueue.get(other);if(!pending?.blast||pending.energy<strength)fractureQueue.set(other,{split:other,energy:strength,blast:true,localPoint:p.clone().sub(other.position).applyQuaternion(other.quaternion.clone().invert())})}
+    }
+    // A crowded blast does not mint a new copy of its energy for every piece.
+    const launchScale=Math.min(1,Math.sqrt(energy*.12/Math.max(.001,launchEnergy)));
+    for(const {other,d,contact}of kicks){d.multiplyScalar(launchScale);other.rb.applyImpulse(cv(d),cv(contact));other.rb.wakeUp();other.sleeping=false;}
     // A finite spherical pressure volume performs the same narrow-phase
     // collision tests as thrown bodies, independently of building damage.
-    const shock={id:++serial,position:p,quaternion:new THREE.Quaternion(),half:new THREE.Vector3(radius,radius,radius),mass:Math.min(5000,energy/100),velocity:new THREE.Vector3(0,26,0),rb:{shapes:[new CANNON.Sphere(radius)],shapeOffsets:[new CANNON.Vec3()],shapeOrientations:[new CANNON.Quaternion()]}};
+    const shock={id:++serial,position:p,quaternion:new THREE.Quaternion(),half:new THREE.Vector3(radius,radius,radius),mass:1,velocity:new THREE.Vector3(),blast:{impulseAt},rb:{shapes:[new CANNON.Sphere(radius)],shapeOffsets:[new CANNON.Vec3()],shapeOrientations:[new CANNON.Quaternion()]}};
     People.collideBody(shock,p,1/60);People.alert(p,radius*2);G.fx(p,item?.shape==='nuke'?100:45,item?.shape==='nuke'?'nuclear':item?.shape==='meteor'?'meteor':'explosion');G.sound('explosion',item?.shape==='nuke'?2:1,p);G.shake=item?.shape==='nuke'?2.8:1.1;
     if(item?.shape==='meteor'){body.mesh?.getObjectByName('meteor-tail')?.traverse(m=>{m.visible=false});body.rb.velocity.scale(.28,body.rb.velocity);G.toast('隕石撞擊 · 大範圍崩塌')}else{removeBody(body,true);G.toast(item?.shape==='nuke'?'核爆衝擊 · 街區連鎖崩塌':item?.shape==='grenade'?'手榴彈爆炸':item?.shape==='rpg'?'RPG 命中 · 爆破衝擊':item?.shape==='airstrike'?'空襲炸彈命中':'油桶爆炸 · 連鎖衝擊')}
   }
@@ -3559,13 +4086,13 @@ window.Physics = (() => {
     // A full budget delays the crack; it never makes that material invulnerable.
     const room=activityBudget()+(blast?12:0)-G.bodies.filter(b=>!b.removed&&!b.sleeping).length;if(room<1)return false;
     const q=new THREE.Quaternion().copy(body.rb.quaternion),localPoint=(point||body.position).clone().sub(body.position).applyQuaternion(q.clone().invert()),groups=Fracture.partition(body.parts,{point:localPoint,energy,mass:body.mass,mode:blast?'blast':'impact',maxGroups:Math.min(7,room+1),depth:blast?0:body.splitDepth});if(groups.length<2)return true;
-    const vel=tv(body.rb.velocity),omega=tv(body.rb.angularVelocity),speed=Math.min(3.6,.17*Math.sqrt(energy/body.mass)),children=groups.map(parts=>{const info=Fracture.describe(parts),offset=info.center.clone().applyQuaternion(q),scatter=info.center.clone().sub(localPoint).applyQuaternion(q).normalize().multiplyScalar(speed);return {parts,info,offset,scatter}}),mean=new THREE.Vector3();for(const c of children)mean.addScaledVector(c.scatter,c.info.mass/body.mass);removeBody(body,false);
+    const vel=tv(body.rb.velocity),omega=tv(body.rb.angularVelocity),speed=blast?0:Math.min(3.6,.17*Math.sqrt(energy/body.mass)),children=groups.map(parts=>{const info=Fracture.describe(parts),offset=info.center.clone().applyQuaternion(q),scatter=info.center.clone().sub(localPoint).applyQuaternion(q).normalize().multiplyScalar(speed);return {parts,info,offset,scatter}}),mean=new THREE.Vector3();for(const c of children)mean.addScaledVector(c.scatter,c.info.mass/body.mass);removeBody(body,false);
     for(const c of children){const velocity=vel.clone().add(new THREE.Vector3().crossVectors(omega,c.offset)).add(c.scatter).sub(mean);compound(c.parts,{quaternion:q,origin:body.position,velocity,angular:omega,splitDepth:blast?1:body.splitDepth+1})}G.fx(point||body.position,Math.min(14,groups.length*2),'collapse');return true;
   }
   function removeBody(b,hide,wake=true){if(b.removed)return;if(wake)wakeRestingNear(b.rb);b.removed=true;world.removeBody(b.rb);if(b.mesh)G.scene.remove(b.mesh);if(hide)for(const p of b.parts){p.block.cleared=true;G.hideBlock(p.block)}}
   function readBodyState(b){b.position.copy(b.rb.position);b.velocity.copy(b.rb.velocity);b.quaternion.copy(b.rb.quaternion);b.sleeping=b.rb.sleepState===2}
   function step(dt){frame++;structureClock+=dt;updateStrikes(dt);updateGravityWell(dt);const current=G.bodies.filter(b=>!b.removed);const impacts=[];for(const key in stepStats)stepStats[key]=0;
-    for(const b of current){b.age+=dt;
+    for(const b of current){b.age+=dt;if(b.rb.sleepState===2){if(b.restingSince==null)b.restingSince=G.elapsed}else {b.restingSince=null;b.restGrounded=false}
       // Cannon already leaves asleep bodies out of integration and static
       // contact generation. Avoid repeating rendering and pedestrian sweeps
       // for that same unchanged pose; waking contacts still run this step.
@@ -3579,7 +4106,7 @@ window.Physics = (() => {
         if(hit){b.position.copy(hit.point);b.rb.position.copy(cv(hit.point));explode(b);continue}
       }
       // Continuous expanded-box sweeps prevent fast small projectiles tunnelling.
-      if((b.type==='projectile'||b.type==='debris')&&!b.sleeping&&b.velocity.length()*dt>Math.min(b.half.x,b.half.y,b.half.z)*.6){const dest=b.position.clone().addScaledVector(b.velocity,dt),hit=sweep(b.position,dest,b.half);if(hit){if(impactExplosive(b)&&!b.exploded){b.position.copy(hit.point);b.rb.position.copy(cv(hit.point));explode(b);continue}const speed=b.velocity.length(),energy=.5*b.mass*speed*speed;damage(hit.point,energy,b.velocity,b,hit.block);b.lastDamage=G.elapsed;b.hit=true;if(b.item===4&&b.fuse<0)b.fuse=2.3;
+      if((b.type==='projectile'||b.type==='debris')&&!b.sleeping&&b.velocity.length()*dt>Math.min(b.half.x,b.half.y,b.half.z)*.6){const dest=b.position.clone().addScaledVector(b.velocity,dt),hit=sweep(b.position,dest,b.half);if(hit){if(impactExplosive(b)&&!b.exploded){b.position.copy(hit.point);b.rb.position.copy(cv(hit.point));b.impactBlock=hit.block;explode(b);continue}const speed=b.velocity.length(),energy=.5*b.mass*speed*speed;damage(hit.point,energy,b.velocity,b,hit.block);b.lastDamage=G.elapsed;b.sweptFrame=frame;b.hit=true;if(b.item===4&&b.fuse<0)b.fuse=2.3;
           if(hit.block.alive){const before=hit.point.clone().addScaledVector(hit.normal,.06);b.rb.position.copy(cv(before));const vn=b.velocity.dot(hit.normal);b.velocity.addScaledVector(hit.normal,-vn*1.16);b.rb.velocity.copy(cv(b.velocity.multiplyScalar(.67)))}else {b.rb.velocity.scale(b.mass<20?.61:.91,b.rb.velocity)}
         }}
     }
@@ -3594,19 +4121,31 @@ window.Physics = (() => {
       const normalSpeed=Math.abs(rx*contact.ni.x+ry*contact.ni.y+rz*contact.ni.z),energy=.5*effectiveMass*normalSpeed*normalSpeed;
       for(const body of [a,b])if(body?.item===4&&body.fuse<0&&normalSpeed>2)body.fuse=2.3;
       if(a&&impactExplosive(a)&&!a.exploded&&!a.removed&&a.age>.08)detonations.add(a);if(b&&impactExplosive(b)&&!b.exploded&&!b.removed&&b.age>.08)detonations.add(b);
-      if(stationary.floorData&&energy>70&&normalSpeed>1.6){const id=dynamic.id+':'+stationary.id;if(!hitPairs.has(id)&&(contactCooldown.get(id)||0)<G.elapsed){hitPairs.add(id);contactCooldown.set(id,G.elapsed+.16);impacts.push({dynamic,point:tv(dynamic.rb.position).add(offset),energy,velocity:new THREE.Vector3(vx,vy,vz),block:shape?.block});}}
+      if(stationary.floorData&&energy>70&&normalSpeed>(dynamic.parts.length?2.3:1.6)&&dynamic.sweptFrame!==frame){const floor=stationary.floorData,id=dynamic.id+':'+floor.b.id+':'+floor.index;if(!hitPairs.has(id)&&(contactCooldown.get(id)||0)<G.elapsed){hitPairs.add(id);contactCooldown.set(id,G.elapsed+.3);
+        // Only the local contact patch does work on this member, not a fresh
+        // copy of an entire falling skyscraper's kinetic energy per floor.
+        const localMass=Math.min(effectiveMass,shape?.block?blockMass(shape.block)*3:6000),localEnergy=Math.min(energy,.5*localMass*normalSpeed*normalSpeed);
+        impacts.push({dynamic,point:tv(dynamic.rb.position).add(offset),energy:localEnergy,velocity:new THREE.Vector3(vx,vy,vz),block:shape?.block});}}
       for(const body of [a,b])if(body?.type==='chunk'&&body.age>.22&&normalSpeed>3.8&&energy>body.mass*8&&!hitPairs.has('split'+body.id)){hitPairs.add('split'+body.id);impacts.push({split:body,energy,point:tv(body.rb.position).add(body===a?contact.ri:contact.rj)})}
+      // Keep actual ground-contact evidence across sleep. Low altitude alone
+      // must never make a suspended or falling piece eligible for cleanup.
+      if(stationary.ground)dynamic.restGrounded=true;
       if(stationary.ground&&normalSpeed>3&&!hitPairs.has('ground'+dynamic.id)){hitPairs.add('ground'+dynamic.id);if(G.elapsed-dynamic.lastDamage>.25){const point=tv(dynamic.rb.position).add(offset);G.sound(dynamic.mass>150?'heavy':'tap',Math.min(1,Math.sqrt(energy)/140),point);if(dynamic.mass>250){G.fx(point,Math.min(14,dynamic.mass/120),'dust');G.shake=Math.min(.8,G.shake+Math.sqrt(energy)*.00012)}dynamic.lastDamage=G.elapsed}}
     }
     for(const body of detonations){body.position.copy(body.rb.position);explode(body)}
-    for(const hit of impacts){if(hit.split){const pending=fractureQueue.get(hit.split);if(!hit.split.removed&&(!pending||!pending.blast&&pending.energy<hit.energy)){hit.localPoint=hit.point.clone().sub(hit.split.position).applyQuaternion(hit.split.quaternion.clone().invert());fractureQueue.set(hit.split,hit)}}else if(!hit.dynamic.removed&&!hit.dynamic.exploded)damage(hit.point,hit.energy,hit.velocity,hit.dynamic,hit.block)}
+    const impactWork=new Map();for(const hit of impacts)if(hit.dynamic)impactWork.set(hit.dynamic,(impactWork.get(hit.dynamic)||0)+hit.energy);
+    const impactScales=new Map();for(const [body,work]of impactWork){const v=body.preVelocity,w=body.preAngular,localW=w.clone().applyQuaternion(body.oldQuaternion.clone().invert()),inertia=body.rb.inertia,kinetic=.5*body.mass*v.lengthSq()+.5*(inertia.x*localW.x**2+inertia.y*localW.y**2+inertia.z*localW.z**2);impactScales.set(body,Math.min(1,kinetic*.4/Math.max(1,work)))}
+    for(const hit of impacts){if(hit.split){const pending=fractureQueue.get(hit.split);if(!hit.split.removed&&(!pending||!pending.blast&&pending.energy<hit.energy)){hit.localPoint=hit.point.clone().sub(hit.split.position).applyQuaternion(hit.split.quaternion.clone().invert());fractureQueue.set(hit.split,hit)}}else if(!hit.dynamic.removed&&!hit.dynamic.exploded)damage(hit.point,hit.energy*impactScales.get(hit.dynamic),hit.velocity,hit.dynamic,hit.block)}
+    // Crushing and fracture consume motion; repeated contact cannot keep
+    // spending the same incoming velocity after the material has broken.
+    for(const [body,work]of impactWork)if(!body.removed&&work>0){body.rb.velocity.scale(.84,body.rb.velocity);body.rb.angularVelocity.scale(.9,body.rb.angularVelocity);}
     // Spread complex fractures across steps. Queued chunks continue colliding
     // as intact rigid bodies, keeping every material and pedestrian contact.
     for(const [body]of fractureQueue)if(body.removed)fractureQueue.delete(body);const nextCrack=[...fractureQueue].find(([,hit])=>hit.blast)||fractureQueue.entries().next().value;
     if(nextCrack){const [body,hit]=nextCrack;if(body.peopleFrame!==frame){readBodyState(body);People.collideBody(body,body.oldPosition,dt);body.peopleFrame=frame}const done=splitChunk(body,hit.energy,hit.localPoint.clone().applyQuaternion(body.quaternion).add(body.position),!!hit.blast);if(done||!hit.blast)fractureQueue.delete(body)}
     if(structureClock>.08){const elapsed=structureClock;structureClock=0;supports(elapsed)}flush();
     for(const b of G.bodies){if(b.removed)continue;if(b.restingFrame===frame&&b.rb.sleepState===2){stepStats.sleeping++;continue}readBodyState(b);if(b.peopleFrame!==frame){People.collideBody(b,b.oldPosition,dt);b.peopleFrame=frame;stepStats.peopleSweeps++}if(b.mesh){b.mesh.position.copy(b.position);b.mesh.quaternion.copy(b.quaternion)}G.syncBody(b);b.rendered=true;
-      if(b.sleeping){stepStats.sleeping++;b.oldPosition.copy(b.position);b.oldQuaternion.copy(b.quaternion);b.preVelocity.set(0,0,0);b.preAngular.set(0,0,0)}else stepStats.active++;
+      if(b.sleeping){if(b.restingSince==null)b.restingSince=G.elapsed;stepStats.sleeping++;b.oldPosition.copy(b.position);b.oldQuaternion.copy(b.quaternion);b.preVelocity.set(0,0,0);b.preAngular.set(0,0,0)}else {b.restingSince=null;stepStats.active++}
       if(b.position.y < -100||Math.abs(b.position.x)>600||Math.abs(b.position.z)>600)removeBody(b,true);
     }
     G.bodies=G.bodies.filter(b=>!b.removed);
@@ -3619,7 +4158,7 @@ window.Physics = (() => {
     const batches=[];for(const bucket of bins.values())for(let i=0;i<bucket.length;i+=16)batches.push(bucket.slice(i,i+16));
     for(const batch of batches){if(batch.length<3)continue;const center=batch.reduce((s,b)=>s.addScaledVector(b.position,b.mass),new THREE.Vector3()).multiplyScalar(1/batch.reduce((s,b)=>s+b.mass,0)),parts=[],shapes=[],half=new THREE.Vector3(),mass=batch.reduce((s,b)=>s+b.mass,0),velocity=new THREE.Vector3(),angular=new THREE.Vector3(),sleeping=batch.every(b=>b.rb.sleepState===2);
       for(const b of batch){velocity.addScaledVector(b.velocity,b.mass/mass);angular.addScaledVector(tv(b.rb.angularVelocity),b.mass/mass);const local=b.position.clone().sub(center);for(const p of b.parts){parts.push({block:p.block,local:p.local.clone().applyQuaternion(b.quaternion).add(local),rotation:b.quaternion.clone()})}shapes.push({shape:new CANNON.Box(cv(b.half)),offset:cv(local),quaternion:new CANNON.Quaternion(b.quaternion.x,b.quaternion.y,b.quaternion.z,b.quaternion.w)});half.max(new THREE.Vector3(Math.abs(local.x),Math.abs(local.y),Math.abs(local.z)).add(b.half));removeBody(b,false,false)}
-      half.copy(Fracture.describe(parts).half);const merged=createBody({position:center,half,mass,velocity,angular,parts,shapes,type:'rubble',important:true});for(const p of parts)p.block.body=merged;if(sleeping)merged.rb.sleep();G.syncBody(merged);
+      half.copy(Fracture.describe(parts).half);const merged=createBody({position:center,half,mass,velocity,angular,parts,shapes,type:'rubble',important:true});for(const p of parts)p.block.body=merged;if(sleeping){merged.rb.sleep();merged.restingSince=Math.max(...batch.map(b=>b.restingSince??G.elapsed));merged.restGrounded=batch.some(b=>b.restGrounded)}G.syncBody(merged);
     }G.bodies=G.bodies.filter(b=>!b.removed);
   }
   function raycast(a,b,radius=0){const wall=sweep(a,b,new THREE.Vector3(radius,radius,radius)),body=bodySweep(a,b,radius);let hit=wall;if(body&&(!hit||body.t<hit.t))hit=body;
@@ -3628,7 +4167,31 @@ window.Physics = (() => {
     for(const k of rayStatics){sweepMin.set(k.x-k.sx*.5-radius,k.y-k.sy*.5-radius,k.z-k.sz*.5-radius);sweepMax.set(k.x+k.sx*.5+radius,k.y+k.sy*.5+radius,k.z+k.sz*.5+radius);const test=segmentBox(a,b,sweepMin,sweepMax);if(test&&(!hit||test.t<hit.t))hit={...test,point:a.clone().lerp(b,test.t),static:k}}
     if(b.y<a.y){let t=THREE.MathUtils.clamp(a.y/(a.y-b.y),0,1),point=a.clone().lerp(b,t);for(let i=0;i<2;i++){const y=G.pedestrianGroundAt?.(point.x,point.z)??G.sidewalkHeight??0;t=(a.y-y)/(a.y-b.y);point.copy(a).lerp(b,t)}if(t>=0&&t<=1&&(!hit||t<hit.t))hit={t,point,normal:new THREE.Vector3(0,1,0),ground:true}}return hit}
   function clear(){endGravityWell(false);for(const b of [...G.bodies])removeBody(b,true);G.bodies=[];G.toast('已清除掉落物；站立建築保留目前損傷')}
-  return {init,step,spawn,summon,airstrike,fireBullet,sweep,raycast,query,damage,clear,detachUpper,supports,flush,segmentBox,gravityTarget,gravityField,updateTime,runtimeStats:()=>({...stepStats}),weaponStats:()=>({...weapons,pendingBombs:strikes.reduce((n,s)=>n+6-s.next,0),activeGravityWells:gravityWell?1:0,gravityRemaining:gravityWell?Math.max(0,gravityWell.end-G.elapsed):0,gravityAffected:gravityWell?.affected||0,gravityLiftedBlocks:gravityWell?.lifted||0})};
+  function cleanupRestingDebris(camera,limit=1){const result={bodies:0,blocks:0};limit=Math.max(0,Math.min(3,Math.floor(limit)));if(!G||!limit)return result;
+    // Called only by the slow-frame governor, never by the per-frame solver.
+    // The support graph contains sleeping, detached rubble connected to an
+    // actual ground contact. Roof fragments and airborne sleepers stay put.
+    const entries=[];for(const body of G.bodies){if(body.removed)continue;const rb=body.rb;if(rb.aabbNeedsUpdate)rb.computeAABB();const lo=rb.aabb.lowerBound,hi=rb.aabb.upperBound,ground=G.pedestrianGroundAt?.(rb.position.x,rb.position.z)??G.sidewalkHeight??0;
+      const settled=body.parts.length>0&&body.type!=='projectile'&&body.parts.every(p=>!p.block.alive&&!p.block.cleared)&&rb.sleepState===2&&body.restingSince!=null&&G.elapsed-body.restingSince>=2&&rb.velocity.lengthSquared()<.0025&&rb.angularVelocity.lengthSquared()<.0025;
+      entries.push({body,lo,hi,ground,settled,connected:false});
+    }
+    const overlap=(a,b)=>a.lo.x<b.hi.x-.025&&a.hi.x>b.lo.x+.025&&a.lo.z<b.hi.z-.025&&a.hi.z>b.lo.z+.025;
+    const restsOn=(upper,lower)=>upper.lo.y>lower.lo.y+.08&&upper.hi.y>lower.hi.y+.08&&Math.abs(upper.lo.y-lower.hi.y)<.38&&overlap(upper,lower);
+    // A rotated chunk can bear on one corner while its AABB extends below
+    // the supporting top. Err on preserving both pieces in that situation.
+    const couldSupport=(upper,lower)=>overlap(upper,lower)&&upper.lo.y<=lower.hi.y+.38&&upper.hi.y>lower.lo.y+.1&&(upper.lo.y>lower.lo.y+.08||upper.hi.y>lower.hi.y+.08);
+    const settled=entries.filter(e=>e.settled&&e.hi.y<=e.ground+12).sort((a,b)=>a.lo.y-b.lo.y);
+    for(const entry of settled){entry.connected=!!entry.body.restGrounded&&entry.lo.y<=entry.ground+.45&&entry.lo.y>=-1;
+      if(!entry.connected)entry.connected=settled.some(lower=>lower!==entry&&lower.connected&&restsOn(entry,lower));
+    }
+    const position=camera?.position||camera||new THREE.Vector3();
+    const candidates=settled.filter(e=>e.connected&&!entries.some(other=>other!==e&&couldSupport(other,e))&&!People.occupiesBody?.(e.body));
+    candidates.sort((a,b)=>a.body.parts.length-b.body.parts.length||b.body.position.distanceToSquared(position)-a.body.position.distanceToSquared(position)||b.hi.y-a.hi.y);
+    for(const entry of candidates){if(result.bodies>=limit)break;const body=entry.body;if(body.removed||body.rb.sleepState!==2)continue;result.bodies++;result.blocks+=body.parts.length;fractureQueue.delete(body);removeBody(body,true,false)}
+    if(result.bodies){G.bodies=G.bodies.filter(b=>!b.removed);world.broadphase.dirty=true}
+    return result;
+  }
+  return {init,step,spawn,summon,airstrike,fireBullet,sweep,raycast,query,damage,clear,cleanupRestingDebris,detachUpper,supports,flush,segmentBox,gravityTarget,gravityField,updateTime,runtimeStats:()=>({...stepStats}),weaponStats:()=>({...weapons,pendingBombs:strikes.reduce((n,s)=>n+6-s.next,0),activeGravityWells:gravityWell?1:0,gravityRemaining:gravityWell?Math.max(0,gravityWell.end-G.elapsed):0,gravityAffected:gravityWell?.affected||0,gravityLiftedBlocks:gravityWell?.lifted||0})};
 })();
 
 </script>
@@ -3711,6 +4274,70 @@ window.GravityVisual=(()=>{
 
 </script>
 <script>
+/* src/debris-governor.js — embedded offline */
+/* Frame-time policy only: physics decides which grounded wreckage is safe. */
+window.DebrisGovernor = (() => {
+  function create({ cleanup, onCleanup = () => {}, targetFps = 45 }) {
+    const normalized = value => (typeof value === 'number' || typeof value === 'string' && value.trim() !== '') && Number.isFinite(Number(value)) ? Math.max(30, Math.min(60, Math.round(Number(value)))) : null;
+    targetFps = normalized(targetFps) ?? 45;
+    let state;
+    function reset() {
+      state = { fps: 60, lowSeconds: 0, cleanedBodies: 0, cleanedBlocks: 0,
+        cleaning: false, exhausted: false, active: false, enabled: true,
+        clock: 0, nextCleanup: 0, warmup: 1.5, windowSeconds: 0, frames: 0 };
+    }
+    function suspend() {
+      state.active = false; state.cleaning = false; state.exhausted = false;
+      state.lowSeconds = 0; state.windowSeconds = 0; state.frames = 0;
+      state.warmup = 1.5; state.nextCleanup = state.clock;
+    }
+    function setTargetFps(value) {
+      const next = normalized(value);
+      if (next !== null && next !== targetFps) {
+        targetFps = next;
+        // Old measurements were made against a different threshold. Keep
+        // lifetime cleanup totals, but require fresh warm-up and slow windows.
+        suspend(); state.fps = 60;
+      }
+      return targetFps;
+    }
+    function sample(seconds, context = {}) {
+      if (context.targetFps !== undefined) setTargetFps(context.targetFps);
+      state.enabled = context.enabled !== false;
+      if (!state.enabled || !context.playing || context.paused || context.hidden) {
+        suspend(); return null;
+      }
+      if (!Number.isFinite(seconds) || seconds <= 0) return null;
+      state.active = true; state.clock += seconds;
+      if (state.warmup > 0) { state.warmup -= Math.min(seconds, .25); return null; }
+      state.windowSeconds += seconds; state.frames++;
+      if (state.windowSeconds >= 1) {
+        state.fps = state.frames / state.windowSeconds;
+        // A single explosion hitch must not be mistaken for sustained overload.
+        state.lowSeconds = state.fps < targetFps - 1e-6 ? state.lowSeconds + Math.min(1.25, state.windowSeconds) : 0;
+        state.windowSeconds = 0; state.frames = 0;
+        if (state.fps >= targetFps - 1e-6) { state.cleaning = false; state.exhausted = false; }
+      }
+      if (state.fps >= targetFps - 1e-6 || state.lowSeconds < 2 || state.clock < state.nextCleanup) return null;
+      const result = cleanup() || { bodies: 0, blocks: 0 };
+      const bodies = Math.max(0, Number(result.bodies) || 0), blocks = Math.max(0, Number(result.blocks) || 0);
+      state.cleaning = bodies > 0; state.exhausted = bodies === 0;
+      state.cleanedBodies += bodies; state.cleanedBlocks += blocks;
+      state.nextCleanup = state.clock + (bodies ? 1 : 2);
+      if (bodies) onCleanup(result);
+      return result;
+    }
+    function stats() {
+      const { fps, lowSeconds, cleanedBodies, cleanedBlocks, cleaning, exhausted, active, enabled } = state;
+      return { fps, lowSeconds, cleanedBodies, cleanedBlocks, cleaning, exhausted, active, enabled, targetFps, target: targetFps };
+    }
+    reset(); return { sample, reset, stats, setTargetFps };
+  }
+  return { create };
+})();
+
+</script>
+<script>
 /* src/main.js — embedded offline */
 /* BRICK CITY — a self-contained, offline WebGL playground. */
 (() => {
@@ -3727,6 +4354,9 @@ window.GravityVisual=(()=>{
  const ground=new THREE.Mesh(new THREE.PlaneGeometry(1600,1600),Toy.material(0xa4c8b9,.87,0));ground.rotation.x=-Math.PI/2;ground.position.y=-1.46;ground.receiveShadow=true;scene.add(ground);
  const G=window.Game={scene,camera,renderer,environment:new THREE.Group(),peopleGroup:new THREE.Group(),blocks:[],buildings:[],bodies:[],statics:[],options:{},pools:{},score:0,destroyed:0,total:0,collapses:0,elapsed:0,combo:0,lastImpact:0,shake:0,playing:false,paused:false,observer:false,selected:0,charge:0,throws:12,sidewalkHeight:.34};scene.add(G.environment,G.peopleGroup);
  const hand=G.hand={active:false,person:null,target:null,valid:false,focus:null};
+ const peopleXray=G.peopleXray=PeopleXray.create(People);G.xrayEnabled=false;
+ function setXray(enabled){G.xrayEnabled=!!enabled;peopleXray.setEnabled(G.xrayEnabled);UI.setXray(G.xrayEnabled);renderDirty=true;}
+ function toggleXray(){if(!G.playing||G.paused)return;setXray(!G.xrayEnabled);G.toast(G.xrayEnabled?'行人透視 · 綠色健康／黃色受傷／紅色死亡；Tab 關閉':'已關閉行人透視');}
  const ZERO=new THREE.Vector3(),ONE=new THREE.Vector3(1,1,1),IDENTITY=new THREE.Quaternion(),matrix=new THREE.Matrix4(),position=new THREE.Vector3(),scale=new THREE.Vector3(),rotation=new THREE.Quaternion();
  const keys=new Set();let yaw=0,pitch=0,chargeStart=0,charging=false,firing=false,nextShot=0,recoil=0,zoom=false,drag=false,lockPending=false,ignoreUnlock=false,accumulator=0,lastTime=performance.now(),fpsFrames=0,fpsTime=0,fps=60,uiTimer=0,menuAngle=.7,challengeEnd=0,shownResult=false,generation=0;
  const defaults={up:'KeyW',down:'KeyS',left:'KeyA',right:'KeyD',rise:'KeyE',fall:'KeyQ',sprint:'ShiftLeft',prev:'KeyZ',next:'KeyX',rebuild:'KeyR'};
@@ -3738,7 +4368,7 @@ window.GravityVisual=(()=>{
  G.addStatic=(x,y,z,sx,sy,sz,color,shape='box')=>G.statics.push({x,y,z,sx,sy,sz,color,shape});
  G.toast=text=>UI.toast(text);G.queryBlocks=(min,max)=>Physics.query(min,max);
  G.onPedestrianHit=(p,energy,body)=>{if(energy>20){G.sound('tap',Math.min(.35,energy/400),body.position)}};
- function poolAdd(shape,spec,block,offset){if(!G.pools[shape])G.pools[shape]={entries:[]};const pool=G.pools[shape],slot=pool.entries.length;pool.entries.push({...spec,block,offset});return {shape,slot,offset:offset||new THREE.Vector3(),scale:new THREE.Vector3(spec.sx,spec.sy,spec.sz)}}
+ function poolAdd(shape,spec,block,offset){if(!G.pools[shape])G.pools[shape]={entries:[]};const pool=G.pools[shape],slot=pool.entries.length,ref={shape,slot,offset:offset||new THREE.Vector3(),scale:new THREE.Vector3(spec.sx,spec.sy,spec.sz)};pool.entries.push({...spec,block,offset,slotRef:ref});return ref}
  function makeInstances(){for(const k of G.statics)poolAdd(Toy.geo[k.shape]?k.shape:'box',k);
    for(const k of G.blocks){k.slots=[poolAdd('box',k,k)];if(k.stud&&k.sy>.12&&k.sx>.65&&k.sz>.65){const num=k.sx>2.1?2:1;for(let i=0;i<num;i++){const offset=new THREE.Vector3(num===2?(i-.5)*Math.min(1.3,k.sx*.45):0,k.sy/2+.065,0);k.slots.push(poolAdd('cylinder',{x:k.x+offset.x,y:k.y+offset.y,z:k.z,sx:Math.min(.53,k.sx*.5),sy:.13,sz:Math.min(.53,k.sz*.5),color:k.color},k,offset))}}}
    for(const [shape,pool]of Object.entries(G.pools)){const mesh=new THREE.InstancedMesh(Toy.geo[shape],Toy.material(0xffffff,.36,.025),pool.entries.length);mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);mesh.castShadow=true;mesh.receiveShadow=true;mesh.frustumCulled=false;pool.mesh=mesh;
@@ -3748,7 +4378,13 @@ window.GravityVisual=(()=>{
  const partPosition=new THREE.Vector3();
  G.syncBody=b=>{shadowDirty=true;for(const part of b.parts){partPosition.copy(part.local).applyQuaternion(b.quaternion).add(b.position);setBlockTransform(part.block,partPosition,b.quaternion,part.rotation)}};
  G.syncStanding=(k,pos,q)=>{shadowDirty=true;setBlockTransform(k,pos,q)};
- G.hideBlock=k=>{shadowDirty=true;for(const slot of k.slots||[]){matrix.makeScale(0,0,0);G.pools[slot.shape].mesh.setMatrixAt(slot.slot,matrix);G.pools[slot.shape].dirty=true}};
+ const removedColor=new THREE.Color();
+ G.hideBlock=k=>{shadowDirty=true;for(const slot of k.slots||[]){const pool=G.pools[slot.shape],index=slot.slot,last=pool.entries.length-1;if(index<0||index>last)continue;
+   // Swap-remove the draw slot, so cleared wreckage stops consuming vertex
+   // and shadow work. Moved living blocks keep their updated slot reference.
+   if(index!==last){pool.mesh.getMatrixAt(last,matrix);pool.mesh.setMatrixAt(index,matrix);pool.mesh.getColorAt(last,removedColor);pool.mesh.setColorAt(index,removedColor);pool.entries[index]=pool.entries[last];pool.entries[index].slotRef.slot=index;}
+   pool.entries.pop();pool.mesh.count=pool.entries.length;pool.mesh.instanceColor.needsUpdate=true;pool.dirty=true;slot.slot=-1;
+ }k.slots=[];};
  G.tintBlock=k=>{for(const slot of k.slots||[]){const pool=G.pools[slot.shape];pool.mesh.setColorAt(slot.slot,new THREE.Color(k.color).multiplyScalar(.68+.32*Math.max(0,k.hp/k.maxHp)));pool.mesh.instanceColor.needsUpdate=true}};
  function resizeSurface(){renderer.setPixelRatio(basePixelRatio*renderScale);renderer.setSize(innerWidth,innerHeight);perf.renderScale=renderScale;perf.pixelRatio=renderer.getPixelRatio();renderDirty=true;}
  function quality(){const opt=G.options.quality,maxPixels=opt==='high'?2700000:opt==='medium'?1800000:1100000;
@@ -3764,8 +4400,9 @@ window.GravityVisual=(()=>{
    const next=slowTime>1.2?Math.max(.65,renderScale-.1):fastTime>5?Math.min(1,renderScale+.05):renderScale;
    if(Math.abs(next-renderScale)>.001){renderScale=next;resizeSurface();slowTime=fastTime=0;lastScaleChange=time}
  }
+ const debrisGovernor=G.debrisGovernor=DebrisGovernor.create({cleanup:()=>Physics.cleanupRestingDebris(camera,1),onCleanup:()=>{shadowDirty=true;renderDirty=true;}});
  function clearScene(){G.gravityEnd?.();People.dispose();for(const b of G.bodies)if(b.mesh)scene.remove(b.mesh);for(const pool of Object.values(G.pools))pool.mesh?.dispose();G.environment.clear();G.peopleGroup.clear();G.blocks=[];G.buildings=[];G.bodies=[];G.statics=[];G.pools={};particles.forEach(p=>{scene.remove(p.mesh);p.mesh.material.dispose()});particles.length=0;for(const e of blastEffects)disposeBlast(e);blastEffects.length=0;for(const t of tracers)t.life=0;tracerLine.visible=false}
- function reset(opts,starting=false){const wasPlaying=G.playing;G.options={...opts,keys:{...defaults,...opts.keys}};G.rng=seedRng(G.options.seed||'CITY-2026');charging=false;firing=false;G.charge=0;keys.clear();cancelHand(true);clearScene();G.score=G.destroyed=G.collapses=G.combo=G.elapsed=0;G.throws=12;shownResult=false;challengeEnd=0;G.shake=0;accumulator=0;generation++;
+ function reset(opts,starting=false){const wasPlaying=G.playing;G.options={...opts,keys:{...defaults,...opts.keys}};G.rng=seedRng(G.options.seed||'CITY-2026');charging=false;firing=false;G.charge=0;keys.clear();cancelHand(true);clearScene();G.score=G.destroyed=G.collapses=G.combo=G.elapsed=0;G.throws=12;shownResult=false;challengeEnd=0;G.shake=0;accumulator=0;generation++;debrisGovernor.setTargetFps(G.options.debrisTargetFps??45);debrisGovernor.reset();setXray(false);
    const info=City.generate(G,G.options);G.cityInfo=info;makeInstances();G.total=G.blocks.length;Physics.init(G);People.init(G,info.routes,Math.min(250,Math.max(0,Math.floor(+G.options.pedestrians||0))));quality();setCamera(info.spawn||{x:110,y:85,z:125},info.target||{x:0,y:23,z:0});G.playing=starting||wasPlaying;G.paused=false;G.observer=false;UI.setSelected(G.selected);UI.setPlaying(G.playing);UI.setPaused(false);UI.setLocked(document.pointerLockElement===canvas);G.toast(starting?'長按左鍵蓄力，放開投擲。試著瞄準底層支柱！':`街區已重建 · 種子 ${G.options.seed}`);updateUI();
  }
  function setCamera(pos,target){camera.position.set(pos.x,pos.y,pos.z);camera.lookAt(target.x,target.y,target.z);yaw=camera.rotation.y;pitch=camera.rotation.x}
@@ -3777,11 +4414,11 @@ window.GravityVisual=(()=>{
  function releaseLock(){cursorIntentVisible=true;lockRequestId++;lockPending=false;G.cursorVisible=true;cancelPointerAction();UI.setCursorVisible?.(true);if(document.pointerLockElement){cursorReleasePending=true;ignoreUnlock=true;document.exitPointerLock();setTimeout(()=>ignoreUnlock=false,250)}}
  function lock(force=false){if(G.paused||!G.playing||(G.observer&&!force))return;cursorIntentVisible=false;audioStart();if(cursorReleasePending){lockPending=true;return}const requestId=++lockRequestId;const denied=()=>{if(requestId!==lockRequestId||cursorIntentVisible)return;cursorIntentVisible=true;lockPending=false;G.cursorVisible=true;G.pointerFallback=true;UI.setCursorVisible?.(true);G.toast('瀏覽器未允許隱藏游標；仍可在城市畫面長按投擲、拖曳轉向。再按 Alt 可重試。')};try{lockPending=true;const promise=canvas.requestPointerLock();if(promise&&promise.catch)promise.catch(denied);setTimeout(()=>{if(requestId===lockRequestId)lockPending=false},250)}catch(e){denied()}}
  function toggleCursor(){if(!G.playing||G.paused)return;if(!cursorIntentVisible){G.pointerFallback=false;releaseLock();G.toast('游標已顯示 · 城市繼續運作，再按 Alt 返回瞄準')}else{cancelPointerAction();lock(true)}}
- function pause(){if(!G.playing)return;G.paused=true;renderDirty=true;keys.clear();charging=false;firing=false;G.charge=0;zoom=false;releaseLock();UI.setPaused(true)}
+ function pause(){if(!G.playing)return;G.paused=true;debrisGovernor.sample(0,{playing:true,paused:true,enabled:G.options.autoClearDebris!==false});renderDirty=true;keys.clear();charging=false;firing=false;G.charge=0;zoom=false;releaseLock();UI.setPaused(true)}
  function resume(){G.paused=false;shownResult=false;UI.setPaused(false);audioStart();if(!G.observer)lock()}
  function observe(){if(!cancelHand())return;G.observer=!G.observer;charging=false;firing=false;G.charge=0;G.paused=false;UI.setPaused(false);if(G.observer){releaseLock();G.toast('觀察模式 · 拖曳轉向、滾輪調整視野、WASD 自由移動')}else lock()}
- function apply(opts){const regenerate=['district','density','pedestrians','seed'].some(k=>opts[k]!==G.options[k]),qualityChanged=opts.quality!==G.options.quality;G.options={...G.options,...opts,keys:{...defaults,...opts.keys}};if(regenerate){const playing=G.playing;reset(G.options);if(playing)pause()}else if(qualityChanged)quality();else if(!G.options.adaptiveQuality&&renderScale!==1){renderScale=1;resizeSurface()}}
- UI.init({start:opts=>{audioStart();reset(opts,true);lock()},rebuild:opts=>{reset({...G.options,...opts});if(!G.observer)lock()},randomize:opts=>{reset({...G.options,...opts});if(!G.observer)lock()},clear:()=>{Physics.clear();People.clearBlood?.()},hand:toggleHand,observe,pause,resume,item:select,apply,rebind:(action,code)=>{G.options.keys[action]=code},menu:()=>{if(!cancelHand())return;G.playing=false;G.paused=false;releaseLock();charging=false;firing=false;G.charge=0;UI.setPlaying(false);UI.setPaused(false)}});
+ function apply(opts){const regenerate=['district','density','pedestrians','seed'].some(k=>opts[k]!==G.options[k]),qualityChanged=opts.quality!==G.options.quality;G.options={...G.options,...opts,keys:{...defaults,...opts.keys}};debrisGovernor.setTargetFps(G.options.debrisTargetFps);if(regenerate){const playing=G.playing;reset(G.options);if(playing)pause()}else if(qualityChanged)quality();else if(!G.options.adaptiveQuality&&renderScale!==1){renderScale=1;resizeSurface()}}
+ UI.init({start:opts=>{audioStart();reset(opts,true);lock()},rebuild:opts=>{reset({...G.options,...opts});if(!G.observer)lock()},randomize:opts=>{reset({...G.options,...opts});if(!G.observer)lock()},clear:()=>{Physics.clear();People.clearBlood?.()},hand:toggleHand,xray:toggleXray,observe,pause,resume,item:select,apply,rebind:(action,code)=>{G.options.keys[action]=code},menu:()=>{if(!cancelHand())return;G.playing=false;G.paused=false;setXray(false);releaseLock();charging=false;firing=false;G.charge=0;UI.setPlaying(false);UI.setPaused(false)}});
  const arcPositions=new Float32Array(91*3),arcDistances=new Float32Array(91),lineGeo=new THREE.BufferGeometry();
  lineGeo.setAttribute('position',new THREE.BufferAttribute(arcPositions,3).setUsage(THREE.DynamicDrawUsage));lineGeo.setAttribute('lineDistance',new THREE.BufferAttribute(arcDistances,1).setUsage(THREE.DynamicDrawUsage));lineGeo.setDrawRange(0,0);
  const arc=new THREE.Line(lineGeo,new THREE.LineDashedMaterial({color:0xfff1b1,dashSize:.8,gapSize:.6,transparent:true,opacity:.95,depthTest:true}));arc.visible=false;arc.frustumCulled=false;scene.add(arc);
@@ -3795,8 +4432,8 @@ window.GravityVisual=(()=>{
  function handRay(){const a=camera.position.clone(),b=a.clone().addScaledVector(forward(),350),hit=Physics.raycast(a,b);return {a,b,hit,end:hit?hit.point.clone().addScaledVector(forward(),-.025):b}}
  function handTarget(){const {hit}=handRay();if(!hit)return null;const surface=hit.normal.y>.86?People.placementSurface?.(hit.point):null;return {point:surface?.point||hit.point,normal:surface?.normal||hit.normal,valid:!!surface}}
  function useHand(){if(!hand.active||!G.playing||G.paused||G.observer)return false;
-   if(!hand.person){const ray=handRay();hand.person=People.pickUpTarget?.(ray.a,ray.end,.08)||null;if(!hand.person){G.toast('請將準星對準要抓取的路人');return false}hand.focus=null;updateHand(0,true);UI.setHand(true,true);G.toast('輕輕抓住了 · 瞄準屋頂、積木或地面，左鍵放下');return true}
-   const target=handTarget();if(!target?.valid||!People.placeCarried(target.point)){G.toast('請選擇有足夠站立空間的屋頂、積木或地面');return false}
+   if(!hand.person){const ray=handRay();hand.person=People.pickUpTarget?.(ray.a,ray.end,.08)||null;if(!hand.person){G.toast('請對準健康或受傷的存活路人');return false}hand.focus=null;updateHand(0,true);UI.setHand(true,true);G.toast('輕輕抓住了 · 瞄準屋頂、積木或地面，左鍵放下');return true}
+   const target=handTarget();if(!target?.valid||!People.placeCarried(target.point)){G.toast('請選擇有足夠安置空間的屋頂、積木或地面');return false}
    hand.person=null;hand.target=null;hand.valid=false;UI.setHand(true,false);G.toast('已安全放下 · 路人恢復正常碰撞');return true;
  }
  function available(){if(!G.playing||G.paused||G.observer||shownResult)return false;if(G.options.mode==='challenge'&&G.throws<=0){G.toast('使用次數已用完，等待倒塌結算');firing=false;return false}return true}
@@ -3818,7 +4455,10 @@ window.GravityVisual=(()=>{
    lineGeo.setDrawRange(0,count);lineGeo.attributes.position.needsUpdate=true;lineGeo.attributes.lineDistance.needsUpdate=true;impact.visible=ring.visible=!!hit;arc.material.color.setHex(item.gravityWell?0xddb7ff:0xfff1b1);ring.material.color.setHex(item.gravityWell?0xd68aff:0xffd76d);if(hit){impact.position.copy(hit.point);ring.position.copy(hit.point);ring.quaternion.setFromUnitVectors(arcForward,hit.normal.lengthSq()?hit.normal:arcUp);ring.scale.setScalar((item.gravityWell?7:1)*(1+Math.sin(G.elapsed*5)*.1))}
  }
  let aimText='',aimClock=0;
- function updateAim(dt){if(hand.active){aimText=hand.person?(hand.valid?'左鍵：安全放下':'請瞄準寬敞的屋頂、積木或地面'):hand.focus?'左鍵：抓取目標路人':'瞄準路人後按左鍵抓取';return}if(G.cursorVisible||G.observer){aimText='';return}aimClock+=dt;if(aimClock<.14)return;aimClock=0;const a=camera.position,b=a.clone().addScaledVector(forward(),350),hit=Physics.sweep(a,b);aimText=hit?`${hit.block.b.name} · ${hit.block.floor+1}F · ${hit.block.support?'承重支柱':hit.block.kind==='slab'?'樓板':hit.block.kind==='window'?'玻璃窗':'積木牆面'} · ${Math.round(hit.block.mass||Toy.blockMass(hit.block)).toLocaleString()} kg`:'';if(hit?.block.b.structural?.affected){const s=hit.block.b.structural,l=hit.block.b.lean;aimText+=` · 承重 ${Math.round(s.ratio*100)}% · 傾斜 ${(Math.hypot(l.x,l.z)*180/Math.PI).toFixed(1)}°${s.failed?' ⚠ 失穩':''}`}}
+ function personHealth(p){return `HP ${Math.ceil(Math.max(0,p.hp??100))}/${p.maxHp||100}${p.dead?' · 死亡':''}`;}
+ function updateAim(dt){if(hand.active){aimText=hand.person?(hand.valid?'左鍵：安全放下':'請瞄準寬敞的屋頂、積木或地面'):hand.focus?'左鍵：抓取目標路人':'瞄準路人後按左鍵抓取';const person=hand.person||hand.focus;if(person)aimText+=' · '+personHealth(person);return}if(G.cursorVisible||G.observer){aimText='';return}aimClock+=dt;if(aimClock<.14)return;aimClock=0;const a=camera.position,b=a.clone().addScaledVector(forward(),350),hit=Physics.raycast(a,b),person=People.projectileSweep?.(a,hit?hit.point:b,.08)?.person;
+   if(person){aimText='路人 · '+personHealth(person);return}
+   const block=hit?.block;aimText=block?`${block.b.name} · ${block.floor+1}F · ${block.support?'承重支柱':block.kind==='slab'?'樓板':block.kind==='window'?'玻璃窗':'積木牆面'} · ${Math.round(block.mass||Toy.blockMass(block)).toLocaleString()} kg`:'';if(block?.b.structural?.affected){const s=block.b.structural,l=block.b.lean;aimText+=` · 承重 ${Math.round(s.ratio*100)}% · 傾斜 ${(Math.hypot(l.x,l.z)*180/Math.PI).toFixed(1)}°${s.failed?' ⚠ 失穩':''}`}}
  const tracers=Array.from({length:32},()=>({a:new THREE.Vector3(),b:new THREE.Vector3(),life:0}));let tracerSlot=0;
  const tracerData=new Float32Array(32*6),tracerGeo=new THREE.BufferGeometry();tracerGeo.setAttribute('position',new THREE.BufferAttribute(tracerData,3).setUsage(THREE.DynamicDrawUsage));
  const tracerLine=new THREE.LineSegments(tracerGeo,new THREE.LineBasicMaterial({color:0xffd763,transparent:true,opacity:.85}));tracerLine.frustumCulled=false;tracerLine.visible=false;scene.add(tracerLine);
@@ -3861,7 +4501,7 @@ window.GravityVisual=(()=>{
    let buffer=noiseBuffers.get(duration);if(!buffer){buffer=audioContext.createBuffer(1,Math.ceil(audioContext.sampleRate*duration),audioContext.sampleRate);const data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,1.5);noiseBuffers.set(duration,buffer)}const noise=audioContext.createBufferSource();noise.buffer=buffer;const filter=audioContext.createBiquadFilter();filter.type=kind==='throw'?'bandpass':'lowpass';filter.frequency.setValueAtTime(kind==='gravity'?180:kind==='gravityEnd'?420:kind==='gun'?2600:kind==='launch'?650:kind==='aircraft'?220:kind==='throw'?1300:kind==='heavy'?280:kind==='collapse'?550:kind==='explosion'?900:2400,now);const gain=audioContext.createGain();gain.gain.setValueAtTime(amp,now);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);noise.connect(filter).connect(gain).connect(master);noise.start();noise.stop(now+duration);
    if(kind!=='throw'){const osc=audioContext.createOscillator(),g=audioContext.createGain();osc.type=kind==='tap'?'triangle':'sine';osc.frequency.setValueAtTime(kind==='tap'?320:kind==='break'?190:70,now);osc.frequency.exponentialRampToValueAtTime(32,now+duration);g.gain.setValueAtTime(amp*.65,now);g.gain.exponentialRampToValueAtTime(.0001,now+duration);osc.connect(g).connect(master);osc.start();osc.stop(now+duration)}
  };
- function updateUI(){const field=Physics.weaponStats();UI.setGravityWell?.(field.gravityRemaining,field.gravityAffected);const people=People.stats();nearNpcCount=people.visualAssets?.near||0;UI.update({score:Math.round(G.score),destruction:G.total?G.destroyed/G.total*100:0,throws:G.throws,mode:G.options.mode,selected:G.selected,charge:G.charge,fps,activeBodies:G.bodies.filter(b=>!b.sleeping).length,sleepingBodies:G.bodies.filter(b=>b.sleeping).length,pedestrians:people,observer:G.observer,combo:G.combo,aimText,locked:document.pointerLockElement===canvas});UI.setHand(hand.active,!!hand.person)}
+ function updateUI(){const field=Physics.weaponStats();UI.setGravityWell?.(field.gravityRemaining,field.gravityAffected);const people=People.stats();nearNpcCount=people.visualAssets?.near||0;UI.update({score:Math.round(G.score),destruction:G.total?G.destroyed/G.total*100:0,throws:G.throws,mode:G.options.mode,selected:G.selected,charge:G.charge,fps,activeBodies:G.bodies.filter(b=>!b.sleeping).length,sleepingBodies:G.bodies.filter(b=>b.sleeping).length,pedestrians:people,cleanup:debrisGovernor.stats(),observer:G.observer,combo:G.combo,aimText,locked:document.pointerLockElement===canvas});UI.setHand(hand.active,!!hand.person)}
  canvas.addEventListener('mousedown',e=>{if(!G.playing||G.paused)return;e.preventDefault();audioStart();const locked=document.pointerLockElement===canvas;if(G.observer||(G.cursorVisible&&!G.pointerFallback&&!locked)){if(e.button===0)drag=true;return}if(!locked&&e.button===0)drag=true;if(e.button===0&&!lockPending){if(hand.active){useHand();return}if(Toy.items[G.selected].automatic){firing=true;nextShot=G.elapsed+.1;if(!fireMachinegun())firing=false}else{charging=true;chargeStart=performance.now();G.charge=.02}}if(e.button===2)zoom=true});
  // Only the canvas can begin a throw; UI clicks never enter the charging path.
  document.addEventListener('mouseup',e=>{if(e.button===0){drag=false;if(firing){firing=false;G.charge=0}if(charging){const canThrow=document.pointerLockElement===canvas||e.target===canvas;G.charge=Math.min(1,(performance.now()-chargeStart)/1550);charging=false;if(canThrow)toss();else G.charge=0}}if(e.button===2)zoom=false});
@@ -3869,7 +4509,7 @@ window.GravityVisual=(()=>{
  canvas.addEventListener('contextmenu',e=>e.preventDefault());canvas.addEventListener('wheel',e=>{if(G.playing){e.preventDefault();if(G.observer){camera.position.addScaledVector(forward(),-Math.sign(e.deltaY)*6)}else select(G.selected+Math.sign(e.deltaY))}},{passive:false});
  document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===canvas,wasVisible=G.cursorVisible;if(locked&&cursorIntentVisible){releaseLock();return}G.cursorVisible=!locked;if(locked){G.pointerFallback=false;cursorReleasePending=false}UI.setLocked(locked);UI.setCursorVisible?.(!locked);lockPending=false;if(!locked&&cursorReleasePending){cursorReleasePending=false;if(!cursorIntentVisible&&G.playing&&!G.paused){lock(true);return}}if(!locked&&!cursorIntentVisible){cursorIntentVisible=true;if(G.playing&&!G.observer&&!ignoreUnlock&&!G.paused&&!wasVisible)pause()}});
  document.addEventListener('keydown',e=>{if(G.playing&&((e.ctrlKey&&e.code==='KeyW')||e.code==='AltLeft'||e.code==='AltRight'))e.preventDefault()},{capture:true});
- document.addEventListener('keydown',e=>{if(UI.captureKey(e))return;if(!G.playing)return;if(e.code==='AltLeft'||e.code==='AltRight'){e.preventDefault();if(!e.repeat)toggleCursor();return}if(e.code==='Escape'){e.preventDefault();if(document.pointerLockElement)return;G.paused?resume():pause();return}if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;const binds=G.options.keys||defaults;if(Object.values(binds).includes(e.code)||/^(Digit[0-9]|Minus|Equal|BracketLeft|BracketRight|KeyB|Arrow)/.test(e.code))e.preventDefault();if(G.paused)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)toggleHand();return}keys.add(e.code);if(e.repeat)return;if(e.code===binds.prev)select(G.selected-1);else if(e.code===binds.next)select(G.selected+1);else if(e.code===binds.rebuild)reset(G.options);else if(/^Digit[1-9]$/.test(e.code))select(+e.code.slice(-1)-1);else if(e.code==='Digit0'&&Toy.items.length>9)select(9);else if(e.code==='Minus'&&Toy.items.length>10)select(10);else if(e.code==='Equal')select(11);else if(e.code==='BracketLeft')select(12);else if(e.code==='BracketRight')select(13);else if(e.code==='KeyB')select(14)});
+ document.addEventListener('keydown',e=>{if(UI.captureKey(e))return;if(!G.playing)return;if(e.code==='AltLeft'||e.code==='AltRight'){e.preventDefault();if(!e.repeat)toggleCursor();return}if(e.code==='Escape'){e.preventDefault();if(document.pointerLockElement)return;G.paused?resume():pause();return}if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.code==='Tab'){if(!G.paused&&!e.ctrlKey&&!e.altKey&&!e.metaKey){e.preventDefault();if(!e.repeat)toggleXray()}return}const binds=G.options.keys||defaults;if(Object.values(binds).includes(e.code)||/^(Digit[0-9]|Minus|Equal|BracketLeft|BracketRight|KeyB|Arrow)/.test(e.code))e.preventDefault();if(G.paused)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)toggleHand();return}keys.add(e.code);if(e.repeat)return;if(e.code===binds.prev)select(G.selected-1);else if(e.code===binds.next)select(G.selected+1);else if(e.code===binds.rebuild)reset(G.options);else if(/^Digit[1-9]$/.test(e.code))select(+e.code.slice(-1)-1);else if(e.code==='Digit0'&&Toy.items.length>9)select(9);else if(e.code==='Minus'&&Toy.items.length>10)select(10);else if(e.code==='Equal')select(11);else if(e.code==='BracketLeft')select(12);else if(e.code==='BracketRight')select(13);else if(e.code==='KeyB')select(14)});
  document.addEventListener('keyup',e=>{keys.delete(e.code);if(G.playing&&(e.code==='AltLeft'||e.code==='AltRight'))e.preventDefault()});window.addEventListener('beforeunload',e=>{if(G.playing){e.preventDefault();e.returnValue=''}});window.addEventListener('blur',()=>{keys.clear();if(G.playing&&!G.paused)pause()});window.addEventListener('resize',()=>{resizePending=true});
  function moveCamera(dt){const b=G.options.keys||defaults,speed=(keys.has(b.sprint)?65:25)*dt,d=new THREE.Vector3();if(keys.has(b.up))d.z-=1;if(keys.has(b.down))d.z+=1;if(keys.has(b.left))d.x-=1;if(keys.has(b.right))d.x+=1;if(d.lengthSq()){d.normalize().applyAxisAngle(new THREE.Vector3(0,1,0),yaw);camera.position.addScaledVector(d,speed)}if(keys.has(b.rise))camera.position.y+=speed;if(keys.has(b.fall))camera.position.y-=speed;camera.position.y=Math.max(1.8,Math.min(220,camera.position.y));camera.position.x=THREE.MathUtils.clamp(camera.position.x,-240,240);camera.position.z=THREE.MathUtils.clamp(camera.position.z,-240,240);const fov=zoom?29:53;camera.fov+=(fov-camera.fov)*Math.min(1,dt*12);camera.updateProjectionMatrix()}
  const cameraBeforeShake=new THREE.Vector3();
@@ -3877,7 +4517,7 @@ window.GravityVisual=(()=>{
    if(G.paused&&!renderDirty){lastTime=time;return}
    if(!G.playing&&time-lastMenuRender<1000/30)return;
    if(!G.playing)lastMenuRender=time;
-   const elapsedDt=Math.max(0,(time-lastTime)/1000),dt=Math.min(.08,elapsedDt);lastTime=time;fpsTime+=dt;fpsFrames++;if(fpsTime>.75){fps=Math.round(fpsFrames/fpsTime);fpsTime=fpsFrames=0}
+   const elapsedDt=Math.max(0,(time-lastTime)/1000),dt=Math.min(.08,elapsedDt);lastTime=time;fpsTime+=elapsedDt;fpsFrames++;if(fpsTime>.75){fps=Math.round(fpsFrames/fpsTime);fpsTime=fpsFrames=0}
    adaptResolution(dt,time);
    if(G.playing&&!G.paused){G.elapsed+=elapsedDt;Physics.updateTime();moveCamera(dt);if(firing&&G.elapsed>=nextShot){nextShot=G.elapsed+.1;if(!fireMachinegun())firing=false}if(!firing&&Toy.items[G.selected].automatic)G.charge=0;if(charging)G.charge=Math.min(1,(time-chargeStart)/1550);accumulator+=dt;
      const simulationStart=performance.now();let steps=0;
@@ -3887,14 +4527,16 @@ window.GravityVisual=(()=>{
      updateFX(dt);updateAim(dt);if(G.elapsed-G.lastImpact>3)G.combo=0;
      if(challengeEnd&&G.elapsed>challengeEnd&&!shownResult){const falling=Physics.weaponStats().activeGravityWells>0||Physics.weaponStats().pendingBombs>0||G.bodies.some(b=>!b.sleeping&&((b.type==='chunk'&&b.velocity.length()>2)||(b.type==='projectile'&&b.item>=8&&!b.exploded)));if(falling&&G.elapsed<challengeEnd+12)challengeEnd+=1;else{shownResult=true;pause();UI.showResults(Math.round(G.score),G.total?G.destroyed/G.total*100:0);challengeEnd=0}}
    }else if(!G.playing){menuAngle+=dt*.018;camera.position.set(Math.cos(menuAngle)*170,108,Math.sin(menuAngle)*170);camera.lookAt(0,24,0);People.update(dt,true);}
+   debrisGovernor.sample(elapsedDt,{playing:G.playing,paused:G.paused,hidden:document.hidden,enabled:G.options.autoClearDebris!==false,targetFps:G.options.debrisTargetFps});
    updateHand(dt);updateWeaponView(dt);People.draw();predict(dt);for(const pool of Object.values(G.pools))if(pool.dirty){pool.mesh.instanceMatrix.needsUpdate=true;pool.dirty=false}uiTimer+=dt;if(uiTimer>.08||G.paused){uiTimer=0;updateUI()}
    shadowTick+=dt;const shadowInterval=G.options.quality==='high'?1/30:1/20;
    if(renderer.shadowMap.enabled&&(shadowDirty||nearNpcCount>0)&&shadowTick>=shadowInterval){renderer.shadowMap.needsUpdate=true;shadowDirty=false;shadowTick=0;perf.shadowUpdates++}
-   cameraBeforeShake.copy(camera.position);if(G.shake>.002&&!G.paused){const amount=G.shake*(+G.options.shake||0)/100;camera.position.x+=(Math.random()-.5)*amount;camera.position.y+=(Math.random()-.5)*amount;G.shake*=Math.pow(.02,dt)}renderer.render(scene,camera);camera.position.copy(cameraBeforeShake);renderDirty=false;
+   cameraBeforeShake.copy(camera.position);if(G.shake>.002&&!G.paused){const amount=G.shake*(+G.options.shake||0)/100;camera.position.x+=(Math.random()-.5)*amount;camera.position.y+=(Math.random()-.5)*amount;G.shake*=Math.pow(.02,dt)}renderer.render(scene,camera);peopleXray.update(camera,time,G.playing&&!G.paused);camera.position.copy(cameraBeforeShake);renderDirty=false;
  }
  // Readable diagnostics used by offline regression checks; no network or storage required.
- G.inspect=()=>({seed:G.options.seed,buildings:G.buildings.map(b=>({name:b.name,floors:b.floors,shape:b.shape,blocks:b.blocks.length})),blocks:G.total,destruction:G.destroyed,score:G.score,bodies:G.bodies.length,active:G.bodies.filter(b=>!b.sleeping).length,people:People.stats(),fps,generation,playing:G.playing,paused:G.paused,weapons:Physics.weaponStats(),renderer:renderer.info.render});
- G.toggleHand=toggleHand;G.useHand=useHand;G.reset=reset;G.select=select;G.toss=toss;G.pause=pause;G.resume=resume;G.seedRng=seedRng;
+ document.addEventListener('visibilitychange',()=>{lastTime=performance.now();fpsTime=fpsFrames=0;debrisGovernor.sample(0,{playing:G.playing,paused:true,enabled:G.options.autoClearDebris!==false})});
+ G.inspect=()=>({seed:G.options.seed,buildings:G.buildings.map(b=>({name:b.name,floors:b.floors,shape:b.shape,blocks:b.blocks.length})),blocks:G.total,destruction:G.destroyed,score:G.score,bodies:G.bodies.length,active:G.bodies.filter(b=>!b.sleeping).length,people:People.stats(),fps,cleanup:debrisGovernor.stats(),generation,playing:G.playing,paused:G.paused,weapons:Physics.weaponStats(),renderer:renderer.info.render});
+ G.toggleHand=toggleHand;G.useHand=useHand;G.toggleXray=toggleXray;G.reset=reset;G.select=select;G.toss=toss;G.pause=pause;G.resume=resume;G.seedRng=seedRng;
  reset(UI.getOptions());requestAnimationFrame(loop);
  Promise.resolve(window.NPCAssets?.ready).then(()=>document.getElementById('loading')?.remove());
 })();
